@@ -1,0 +1,46 @@
+---
+import type { Dict } from '../i18n';
+import { site } from '../site.config';
+interface Props { t: Dict; }
+const { t } = Astro.props;
+---
+<section class="booking-sec on-dark" id="contact" aria-labelledby="contact-titre">
+  <div class="wrap book-grid">
+    <div class="book-copy" data-reveal>
+      <h2 id="contact-titre">{t.booking.title}</h2>
+      <p class="lede">{t.booking.lede}</p>
+      <p class="alt">{t.contact.preferWrite} <a href={`mailto:${site.email}`}>{site.email}</a></p>
+      <div class="me"><span class="avatar" aria-hidden="true"></span><div><strong>Alexandre Majeau</strong><span>{t.booking.role}</span></div></div>
+    </div>
+    <div class="widget" data-reveal>
+      <div class="w-head"><strong>{t.booking.widgetTitle}</strong><span>{t.booking.widgetTool}</span></div>
+      <div class="w-body">
+        <div class="w-step">
+          <p class="w-label">{t.booking.step1}</p>
+          <div class="cal-head">{t.booking.month}<span><button type="button" aria-label={t.booking.prev}>‹</button><button type="button" aria-label={t.booking.next}>›</button></span></div>
+          <div class="cal" id="cal">
+            {t.booking.dow.map((d) => <span class="dow">{d}</span>)}
+          </div>
+          <div class="slots" id="slots">
+            {t.booking.slots.map((s, i) => <button type="button" class={i === 1 ? 'slot sel' : 'slot'}>{s}</button>)}
+          </div>
+        </div>
+        <form class="w-step f" onsubmit="return false">
+          <p class="w-label">{t.booking.step2}</p>
+          <label for="f-nom">{t.booking.fName}</label>
+          <input class="field" id="f-nom" type="text" autocomplete="name">
+          <label for="f-mail">{t.booking.fEmail}</label>
+          <input class="field" id="f-mail" type="email" autocomplete="email">
+          <label for="f-site">{t.booking.fSite}</label>
+          <input class="field" id="f-site" type="url" placeholder="https://">
+          <label for="f-budget">{t.booking.fBudget}</label>
+          <select class="field" id="f-budget">
+            {t.booking.budgets.map((b) => <option>{b}</option>)}
+          </select>
+          <button class="btn btn-hi" type="submit">{t.booking.submit} <svg aria-hidden="true"><use href="#arrow"/></svg></button>
+          <p class="fine">{t.booking.fine} <a href="#">{t.legal.privacy}</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+---
+import type { Dict } from '../i18n';
+interface Props { t: Dict; }
+const { t } = Astro.props;
+---
+<section class="results" id="resultats" aria-labelledby="resultats-titre">
+  <div class="wrap">
+    <div class="panel on-dark" data-reveal>
+      <div class="sec-head" style="margin-bottom:0"><span class="label">{t.results.label}</span></div>
+      <h2 id="resultats-titre">{t.results.title}</h2>
+      <div class="bibs">
+        <div class="bib">
+          <span class="pin a"></span><span class="pin b"></span><span class="pin c"></span><span class="pin d"></span>
+          <div class="num" data-count="300">+300<Fragment set:html={t.results.pct} /></div>
+          <p class="what">{t.results.bib1}</p>
+        </div>
+        <div class="bib">
+          <span class="pin a"></span><span class="pin b"></span><span class="pin c"></span><span class="pin d"></span>
+          <div class="num" data-count="700">+700<Fragment set:html={t.results.pct} /></div>
+          <p class="what">{t.results.bib2}</p>
+          <p class="plain">{t.results.bib2Plain}</p>
+        </div>
+      </div>
+      <p class="res-note">{t.results.note}</p>
+      <figure class="quote">
+        <blockquote><p><Fragment set:html={t.results.quote} /></p></blockquote>
+        <figcaption><span class="q-avatar" aria-hidden="true"></span><span><strong>{t.results.quoteName}</strong>{t.results.quoteRole}</span></figcaption>
+      </figure>
+      <p class="panel-cta">{t.results.panelCta}</p>
+      <a class="btn btn-hi" href="#contact">{t.cta.primary} <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+    </div>
+  </div>
+</section>

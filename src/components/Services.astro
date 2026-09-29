@@ -1,0 +1,75 @@
+---
+import type { Dict } from '../i18n';
+interface Props { t: Dict; }
+const { t } = Astro.props;
+---
+<section class="services" id="services" aria-labelledby="services-titre">
+  <div class="wrap">
+    <div class="sec-head" data-reveal><h2 id="services-titre">{t.services.title}</h2></div>
+    <div class="svc-grid">
+      <article class="svc" data-reveal id="etape-shopping">
+        <div class="svc-vis">
+          <div class="ui-shop" aria-hidden="true">
+            <div class="tile you" data-tag={t.services.youTag}><div class="pic"><svg viewBox="0 0 64 40"><use href="#shoe" style="color:#2B59C3"/></svg></div><div class="nm">{t.services.shoe}</div><div class="vr"><i style="background:#2B59C3"></i>{t.services.size}&nbsp;9</div></div>
+            <div class="tile you" data-tag={t.services.youTag}><div class="pic"><svg viewBox="0 0 64 40"><use href="#shoe" style="color:#C8362B"/></svg></div><div class="nm">{t.services.shoe}</div><div class="vr"><i style="background:#C8362B"></i>{t.services.size}&nbsp;10</div></div>
+            <div class="tile you" data-tag={t.services.youTag}><div class="pic"><svg viewBox="0 0 64 40"><use href="#shoe" style="color:#101311"/></svg></div><div class="nm">{t.services.shoe}</div><div class="vr"><i style="background:#101311"></i>{t.services.size}&nbsp;11</div></div>
+            <div class="tile other"><div class="pic"><svg viewBox="0 0 64 40"><use href="#shoe" style="color:#8C918D"/></svg></div><div class="nm">{t.services.otherStore}</div><div class="vr"><i style="background:#8C918D"></i>{t.services.size}&nbsp;9</div></div>
+          </div>
+        </div>
+        <div class="svc-body">
+          <span class="label">Google Shopping</span>
+          <h3>{t.services.shoppingTitle}</h3>
+          <p>{t.services.shoppingText}</p>
+        </div>
+      </article>
+      <article class="svc" data-reveal id="etape-recherche">
+        <div class="svc-vis">
+          <div class="ui-search" aria-hidden="true">
+            <div class="q"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span class="typed" data-text={t.services.query}>{t.services.query}</span></div>
+            <div class="ad"><span class="sp">{t.services.sponsored}</span> <span class="url">{t.services.adUrl}</span><p class="tt">{t.services.adTitle}</p><p class="ds">{t.services.adDesc}</p></div>
+          </div>
+        </div>
+        <div class="svc-body">
+          <span class="label">{t.services.searchLabel}</span>
+          <h3>{t.services.searchTitle}</h3>
+          <p>{t.services.searchText}</p>
+        </div>
+      </article>
+      <article class="svc" data-reveal id="etape-social">
+        <div class="svc-vis">
+          <div class="ui-post" aria-hidden="true">
+            <div class="hd"><i></i><b>{t.services.yourStore}<span>{t.services.sponsored}</span></b></div>
+            <div class="im"><svg viewBox="0 0 64 40" style="color:#101311"><use href="#tent"/></svg></div>
+            <div class="ct">{t.services.postCollection}<span>{t.services.postShop}</span></div>
+          </div>
+        </div>
+        <div class="svc-body">
+          <span class="label">{t.services.socialLabel}</span>
+          <h3>{t.services.socialTitle}</h3>
+          <p>{t.services.socialText}</p>
+        </div>
+      </article>
+      <article class="svc" data-reveal id="etape-suivi">
+        <div class="svc-vis">
+          <div class="ui-chart" aria-hidden="true">
+            <div class="top"><span>{t.services.chartLabel}</span><b>{t.services.chartPeriod}</b></div>
+            <svg viewBox="0 0 300 110">
+              <g fill="#E9E6DD"><rect x="8" y="70" width="34" height="36" rx="3"/><rect x="56" y="60" width="34" height="46" rx="3"/><rect x="104" y="64" width="34" height="42" rx="3"/><rect x="152" y="46" width="34" height="60" rx="3"/><rect x="200" y="30" width="34" height="76" rx="3"/></g>
+              <rect x="248" y="10" width="34" height="96" rx="3" fill="#3AA8FF" stroke="#101311" stroke-width="2"/>
+              <line x1="0" y1="107" x2="300" y2="107" stroke="#101311" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+        <div class="svc-body">
+          <span class="label">{t.services.trackLabel}</span>
+          <h3>{t.services.trackTitle}</h3>
+          <p>{t.services.trackText}</p>
+        </div>
+      </article>
+    </div>
+    <div class="scope" data-reveal>
+      <p>{t.services.scope}</p>
+      <a class="btn btn-hi" href="#contact">{t.cta.primary} <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+    </div>
+  </div>
+</section>

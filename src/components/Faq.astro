@@ -1,0 +1,19 @@
+---
+import type { Dict } from '../i18n';
+import { site } from '../site.config';
+interface Props { t: Dict; }
+const { t } = Astro.props;
+---
+<section class="faq" id="faq" aria-labelledby="faq-titre">
+  <div class="wrap faq-grid">
+    <div class="faq-intro" data-reveal>
+      <div class="sec-head" style="margin-bottom:0"><h2 id="faq-titre">{t.faq.title}</h2></div>
+      <p>{t.faq.intro} <a href={`mailto:${site.email}`}>{site.email}</a></p>
+    </div>
+    <div data-reveal>
+      {t.faq.items.map((item, i) => (
+        <details open={i === 0}><summary>{item.q}<span class="pm" aria-hidden="true"></span></summary><p>{item.a}</p></details>
+      ))}
+    </div>
+  </div>
+</section>

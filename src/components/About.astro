@@ -1,0 +1,27 @@
+---
+import type { Dict } from '../i18n';
+import { site } from '../site.config';
+interface Props { t: Dict; }
+const { t } = Astro.props;
+---
+<section class="about" id="apropos" aria-labelledby="apropos-titre">
+  <div class="wrap about-grid">
+    <figure class="shot about-photo" data-reveal aria-label={t.about.photoLabel}>
+      <span class="vf tl"></span><span class="vf tr"></span><span class="vf bl"></span><span class="vf br"></span>
+      <figcaption class="cap">{t.about.photoCap}</figcaption>
+    </figure>
+    <div>
+      <div class="sec-head" data-reveal style="margin-bottom:var(--s3)"><h2 id="apropos-titre">{t.about.title}</h2></div>
+      <ol class="reasons" data-reveal>
+        <li><div><h3>{t.about.r1Title}</h3><p>{t.about.r1Text}</p></div></li>
+        <li><div><h3>{t.about.r2Title}</h3><p>{t.about.r2Text}</p></div></li>
+        <li><div><h3>{t.about.r3Title}</h3><p>{t.about.r3Text}</p></div></li>
+      </ol>
+      <ul class="facts" data-reveal>
+        <li><span>Primeau Vélo</span>{t.about.fact1}</li>
+        <li><span>{t.about.eduLabel}</span>{t.about.fact2}</li>
+      </ul>
+      <a class="link-arrow" href={site.linkedin} rel="noopener" target="_blank">{t.about.linkedin} <svg width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a>
+    </div>
+  </div>
+</section>

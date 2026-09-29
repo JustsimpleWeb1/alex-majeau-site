@@ -1,0 +1,33 @@
+---
+import type { Dict } from '../i18n';
+interface Props { t: Dict; }
+const { t } = Astro.props;
+---
+<section class="hero" id="top" aria-labelledby="hero-titre">
+  <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="wrap hero-inner">
+    <div>
+      <div class="byline reveal-load d1"><span class="avatar" aria-hidden="true"></span><span><strong>Alexandre Majeau</strong><small>{t.hero.role}</small></span></div>
+      <p class="kicker reveal-load d1"><span class="dot" aria-hidden="true"></span>{t.hero.role}</p>
+      <h1 id="hero-titre" class="display mask-in"><Fragment set:html={t.hero.title} /></h1>
+      <p class="lede reveal-load d3">{t.hero.lede}</p>
+      <div class="ctas reveal-load d4">
+        <a class="btn btn-hi" id="hero-cta" href="#contact">{t.cta.primary} <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+        <a class="btn btn-line" href="#resultats">{t.hero.seeResults}</a>
+      </div>
+    </div>
+    <div class="stage reveal-load d2">
+      <figure class="shot hero-photo" aria-label={t.hero.photoLabel}>
+        <span class="vf tl"></span><span class="vf tr"></span><span class="vf bl"></span><span class="vf br"></span>
+        <span class="tag">Blainville, QC</span>
+        <span class="reticle" aria-hidden="true"></span>
+        <figcaption class="cap">{t.hero.photoCap}</figcaption>
+      </figure>
+      <div class="toast t1" aria-hidden="true"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><strong>{t.hero.t1Title}</strong><span class="s">{t.hero.t1Sub}</span></span></div>
+      <div class="toast t2" aria-hidden="true"><span class="ic hi"><svg viewBox="0 0 64 40"><use href="#shoe"/></svg></span><span><strong>{t.hero.t2Title} <i class="live"></i></strong><span class="s">{t.hero.t2Sub}</span></span></div>
+      <div class="toast t3" aria-hidden="true"><span class="ic"><svg viewBox="0 0 64 40"><use href="#tent"/></svg></span><span><strong>{t.hero.t3Title}</strong><span class="s">{t.hero.t3Sub}</span></span></div>
+      <div class="toast t4" aria-hidden="true"><span class="ic dark"><svg viewBox="0 0 24 24"><path d="M4 20V4M4 20h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M7 16l4-5 3 3 5-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong>{t.hero.t4Title}</strong><span class="s">{t.hero.t4Sub}</span></span></div>
+    </div>
+  </div>
+  <div class="wrap"><a class="scroll-cue" href="#services">{t.hero.scrollCue} <span aria-hidden="true">↓</span></a></div>
+</section>

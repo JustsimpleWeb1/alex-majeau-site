@@ -1,0 +1,24 @@
+---
+import type { Dict } from '../i18n';
+import { site } from '../site.config';
+interface Props { t: Dict; alt: string; }
+const { t, alt } = Astro.props;
+---
+<div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
+  <div class="wrap mnav-top">
+    <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true"></span>Alexandre Majeau</a>
+    <button class="menu-btn mnav-close" type="button" aria-label={t.nav.close}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+  </div>
+  <nav class="wrap mnav-links" aria-label={t.nav.mobileLabel}>
+    <a href="#services">Services <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+    <a href="#resultats">{t.nav.results} <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+    <a href="#methode">{t.nav.process} <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+    <a href="#apropos">{t.nav.about} <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+    <a href="#faq">FAQ <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+  </nav>
+  <div class="wrap mnav-foot">
+    <a class="lang-m" href={alt} hreflang={t.lang.code} lang={t.lang.code}>{t.lang.name}</a>
+    <a class="btn btn-hi" href="#contact">{t.cta.primary} <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+    <p>{t.contact.preferWrite} <a href={`mailto:${site.email}`}>{site.email}</a></p>
+  </div>
+</div>

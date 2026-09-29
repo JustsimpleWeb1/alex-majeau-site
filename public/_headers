@@ -1,0 +1,9 @@
+# En-tetes de securite Netlify, appliques a tout le site.
+# Fichier servi tel quel depuis public/ (Netlify lit public/_headers au deploy).
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains

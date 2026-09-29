@@ -1,0 +1,51 @@
+---
+import type { Dict } from '../i18n';
+import { site } from '../site.config';
+interface Props { t: Dict; alt: string; }
+const { t, alt } = Astro.props;
+---
+<footer class="site" aria-labelledby="pied-titre">
+  <h2 id="pied-titre" class="sr-only">{t.footer.srTitle}</h2>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true"></span>Alexandre Majeau</a>
+      <p>{t.footer.about}</p>
+      <a class="btn btn-hi" href="#contact">{t.cta.primary} <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+    </div>
+    <nav class="foot-col" aria-label={t.footer.navLabel}>
+      <p class="foot-h">{t.footer.siteHeading}</p>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#resultats">{t.nav.results}</a></li>
+        <li><a href="#methode">{t.nav.process}</a></li>
+        <li><a href="#apropos">{t.nav.about}</a></li>
+        <li><a href="#faq">{t.nav.faqLong}</a></li>
+      </ul>
+    </nav>
+    <div class="foot-col">
+      <p class="foot-h">Services</p>
+      <ul>
+        <li><a href="#etape-social">{t.footer.svc1}</a></li>
+        <li><a href="#etape-recherche">{t.footer.svc2}</a></li>
+        <li><a href="#etape-shopping">{t.footer.svc3}</a></li>
+        <li><a href="#etape-suivi">{t.footer.svc4}</a></li>
+      </ul>
+    </div>
+    <address class="foot-col">
+      <p class="foot-h">Contact</p>
+      <ul>
+        <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+        <li><a href={site.linkedin} rel="noopener" target="_blank">LinkedIn</a></li>
+        <li>{t.footer.city}</li>
+        <li>{t.footer.langs}</li>
+      </ul>
+    </address>
+  </div>
+  <p class="wordmark" aria-hidden="true">Alexandre Majeau</p>
+  <div class="wrap foot-legal">
+    <span>© 2026 Alexandre Majeau. {t.footer.rights}</span>
+    <span><a href="#">{t.legal.privacy}</a> · <a href="#">{t.footer.cookies}</a></span>
+    <span><a href={alt} hreflang={t.lang.code} lang={t.lang.code}>{t.lang.name}</a></span>
+    <span>{t.footer.siteBy} <a href="https://justsimpleweb.com" rel="noopener">Just Simple Web</a></span>
+  </div>
+</footer>

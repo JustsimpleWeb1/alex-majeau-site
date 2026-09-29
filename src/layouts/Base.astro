@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+import { type Lang, dictionaries, paths } from '../i18n';
+import { site } from '../site.config';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = dictionaries[lang];
+const base = Astro.site!;
+const url = (p: string) => new URL(p, base).href;
+const canonical = url(paths[lang]);
+const ogImage = url('/og-image.jpg');
+const home = url('/');
+
+// Données structurées (Person, ProfessionalService, WebSite, WebPage, FAQPage).
+const svcAnchors = ['etape-social', 'etape-recherche', 'etape-shopping', 'etape-suivi'];
+const svcNames = [t.footer.svc1, t.footer.svc2, t.footer.svc3, t.footer.svc4];
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person', '@id': `${home}#alexandre`, name: 'Alexandre Majeau', jobTitle: t.schema.jobTitle, url: home,
+      address: { '@type': 'PostalAddress', addressLocality: 'Blainville', addressRegion: 'QC', addressCountry: 'CA' },
+      alumniOf: { '@type': 'EducationalOrganization', name: "Cégep de l'Outaouais" },
+      knowsLanguage: ['fr-CA', 'en-CA'], knowsAbout: t.schema.knowsAbout, sameAs: [site.linkedin],
+    },
+    {
+      '@type': 'ProfessionalService', '@id': `${canonical}#service`, name: t.footer.srTitle, description: t.schema.serviceDesc,
+      url: canonical, founder: { '@id': `${home}#alexandre` },
+      address: { '@type': 'PostalAddress', addressLocality: 'Blainville', addressRegion: 'QC', addressCountry: 'CA' },
+      areaServed: { '@type': 'AdministrativeArea', name: t.schema.area }, availableLanguage: ['fr', 'en'],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog', name: t.schema.catalog,
+        itemListElement: svcNames.map((name, i) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name, url: `${canonical}#${svcAnchors[i]}` } })),
+      },
+    },
+    { '@type': 'WebSite', '@id': `${canonical}#site`, url: canonical, name: 'Alexandre Majeau', inLanguage: t.meta.lang, publisher: { '@id': `${home}#alexandre` } },
+    { '@type': 'WebPage', '@id': `${canonical}#page`, url: canonical, isPartOf: { '@id': `${canonical}#site` }, about: { '@id': `${canonical}#service` }, inLanguage: t.meta.lang, name: t.meta.title },
+    {
+      '@type': 'FAQPage', '@id': `${canonical}#faq`,
+      mainEntity: t.faq.items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+    },
+  ],
+};
+---
+<!doctype html>
+<html lang={t.meta.lang}>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{t.meta.title}</title>
+<meta name="description" content={t.meta.description}>
+<meta name="robots" content={site.indexable ? 'index, follow' : 'noindex, nofollow'}>
+<link rel="canonical" href={canonical}>
+<link rel="alternate" hreflang="fr-CA" href={url(paths.fr)}>
+<link rel="alternate" hreflang="en-CA" href={url(paths.en)}>
+<link rel="alternate" hreflang="x-default" href={url(paths.fr)}>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#101311">
+<meta property="og:type" content="website">
+<meta property="og:locale" content={t.meta.ogLocale}>
+<meta property="og:locale:alternate" content={t.meta.ogLocaleAlt}>
+<meta property="og:site_name" content="Alexandre Majeau">
+<meta property="og:title" content={t.meta.title}>
+<meta property="og:description" content={t.meta.description}>
+<meta property="og:url" content={canonical}>
+<meta property="og:image" content={ogImage}>
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+</head>
+<body>
+<a class="skip" href="#main">{t.a11y.skip}</a>
+<slot />
+<script>
+  import '../scripts/site.js';
+</script>
+</body>
+</html>
