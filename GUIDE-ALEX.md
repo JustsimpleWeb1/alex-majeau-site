@@ -35,6 +35,8 @@ Les deux outils lisent les règles du site tout seuls (le fichier `AGENTS.md` et
 
 C'est tout. L'outil te donne le lien de la pull request. Netlify y ajoute un lien d'**aperçu** (Deploy Preview), que tu peux aussi ouvrir sur ton téléphone.
 
+Un petit truc : regroupe tes changements dans une seule pull request. Chaque mise en ligne coûte un peu à l'hébergement, alors une demande avec cinq changements vaut mieux que cinq demandes.
+
 ## Ce que tu peux changer seul
 
 - Tous les textes de la page, en français et en anglais.
