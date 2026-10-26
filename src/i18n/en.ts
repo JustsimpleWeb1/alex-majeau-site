@@ -88,9 +88,6 @@ export const en: UiDict = {
     "todoSay": "The hockey campaign costs more than it brings in. I'm cutting it and moving its budget to trail, your best campaign."
   },
   "method": {
-    "w1When": "Week 1",
-    "w23When": "Weeks 2 and 3",
-    "monthlyWhen": "Every month",
     "reportCap": "Here's what your monthly report looks like.",
     "sample": "Example",
     "kpiSpent": "Spent",

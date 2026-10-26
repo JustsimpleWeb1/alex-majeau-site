@@ -13,9 +13,9 @@ const { t } = Astro.props;
     <div>
       <div class="sec-head" data-reveal style="margin-bottom:var(--s3)"><h2 id="apropos-titre">{t.about.title}</h2></div>
       <ol class="reasons" data-reveal>
-        <li><div><h3>{t.about.r1Title}</h3><p>{t.about.r1Text}</p></div></li>
-        <li><div><h3>{t.about.r2Title}</h3><p>{t.about.r2Text}</p></div></li>
-        <li><div><h3>{t.about.r3Title}</h3><p>{t.about.r3Text}</p></div></li>
+        {t.about.reasons.map((reason) => (
+          <li><div><h3>{reason.title}</h3><p>{reason.text}</p></div></li>
+        ))}
       </ol>
       <ul class="facts" data-reveal>
         <li><span>Primeau Vélo</span>{t.about.fact1}</li>

@@ -14,7 +14,8 @@ npm run preview    # sert dist/ en local
 
 ## Où modifier quoi
 
-- **Textes modifiables et référencement** : `src/content/site.json` (bilingue, clés `_fr` et `_en`), aussi éditable dans Pages CMS (`.pages.yml`). Image de partage : `public/images/og-image.jpg`. Guide d'Alex : `GUIDE-ALEX.md`.
+- **Textes modifiables et référencement** : `src/content/site.json` (bilingue, clés `_fr` et `_en`). Image de partage : `public/images/og-image.jpg`.
+- **Design system** : `docs/design-system.md`. **Règles pour Claude et Codex** : `AGENTS.md`. **Guide d'Alex** : `GUIDE-ALEX.md`.
 - **Textes d'interface** : `src/i18n/fr.ts` et `src/i18n/en.ts` (mêmes clés dans les deux fichiers).
 - **Sections** : `src/components/` (une par section, le texte vient des dictionnaires).
 - **Styles** : `src/styles/site.css` (repris tel quel du prototype).
@@ -24,7 +25,8 @@ npm run preview    # sert dist/ en local
 
 ## Déploiement
 
-Netlify : `netlify.toml` est prêt (build `npm run build`, dossier `dist`, Node 22).
+Netlify : `netlify.toml` est prêt (build `npm run build`, dossier `dist`, Node 22). Chaque pull request reçoit un aperçu; `main` est le vrai site.
+`main` est verrouillée par une règle GitHub (« main : Simon seulement ») : seul l'administrateur du dépôt peut la mettre à jour ou fusionner une pull request.
 Vercel fonctionne aussi tel quel (préréglage Astro, site statique).
 
 ## Avant le lancement officiel

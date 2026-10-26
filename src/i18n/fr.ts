@@ -87,9 +87,6 @@ export const fr = {
     "todoSay": "La campagne hockey coûte plus qu'elle ne rapporte. Je la coupe et je donne son budget au trail, votre meilleure campagne."
   },
   "method": {
-    "w1When": "Semaine 1",
-    "w23When": "Semaines 2 et 3",
-    "monthlyWhen": "Chaque mois",
     "reportCap": "Votre rapport mensuel ressemble à ceci.",
     "sample": "Exemple",
     "kpiSpent": "Dépensé",
