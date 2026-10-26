@@ -8,26 +8,13 @@ const { t } = Astro.props;
     <div class="sec-head" data-reveal><h2 id="methode-titre">{t.method.title}</h2></div>
     <div class="method-grid">
       <ol class="steps" data-reveal>
-        <li>
-          <p class="when">30&nbsp;minutes</p>
-          <h3>{t.method.s1Title}</h3>
-          <p>{t.method.s1Text}</p>
-        </li>
-        <li>
-          <p class="when">{t.method.w1When}</p>
-          <h3>{t.method.s2Title}</h3>
-          <p>{t.method.s2Text}</p>
-        </li>
-        <li>
-          <p class="when">{t.method.w23When}</p>
-          <h3>{t.method.s3Title}</h3>
-          <p>{t.method.s3Text}</p>
-        </li>
-        <li>
-          <p class="when">{t.method.monthlyWhen}</p>
-          <h3>{t.method.s4Title}</h3>
-          <p>{t.method.s4Text}</p>
-        </li>
+        {t.method.steps.map((step) => (
+          <li>
+            <p class="when">{step.when}</p>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </li>
+        ))}
       </ol>
       <div class="report-wrap" data-reveal>
         <p class="report-cap">{t.method.reportCap}</p>

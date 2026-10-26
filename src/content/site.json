@@ -133,38 +133,64 @@
   "method": {
     "title_fr": "Comment se déroule un mandat",
     "title_en": "How we work together",
-    "s1Title_fr": "Appel gratuit",
-    "s1Title_en": "Free call",
-    "s1Text_fr": "Vous me présentez votre boutique et vos objectifs, et je vous dis si je peux vous aider.",
-    "s1Text_en": "You tell me about your store and your goals, and I tell you whether I can help.",
-    "s2Title_fr": "Audit de vos comptes",
-    "s2Title_en": "Account audit",
-    "s2Text_fr": "Vous recevez la liste des dépenses qui ne génèrent pas de ventes.",
-    "s2Text_en": "You get a list of the spending that isn't generating sales.",
-    "s3Title_fr": "Plan et lancement",
-    "s3Title_en": "Plan and launch",
-    "s3Text_fr": "Vous approuvez le plan, puis je lance les campagnes.",
-    "s3Text_en": "You approve the plan, then I launch the campaigns.",
-    "s4Title_fr": "Suivi et rapport",
-    "s4Title_en": "Tracking and reporting",
-    "s4Text_fr": "J'ajuste les campagnes chaque semaine et vous recevez un rapport à la fin du mois.",
-    "s4Text_en": "I adjust the campaigns every week and you get a report at the end of the month."
+    "steps": [
+      {
+        "when_fr": "30 minutes",
+        "when_en": "30 minutes",
+        "title_fr": "Appel gratuit",
+        "title_en": "Free call",
+        "text_fr": "Vous me présentez votre boutique et vos objectifs, et je vous dis si je peux vous aider.",
+        "text_en": "You tell me about your store and your goals, and I tell you whether I can help."
+      },
+      {
+        "when_fr": "Semaine 1",
+        "when_en": "Week 1",
+        "title_fr": "Audit de vos comptes",
+        "title_en": "Account audit",
+        "text_fr": "Vous recevez la liste des dépenses qui ne génèrent pas de ventes.",
+        "text_en": "You get a list of the spending that isn't generating sales."
+      },
+      {
+        "when_fr": "Semaines 2 et 3",
+        "when_en": "Weeks 2 and 3",
+        "title_fr": "Plan et lancement",
+        "title_en": "Plan and launch",
+        "text_fr": "Vous approuvez le plan, puis je lance les campagnes.",
+        "text_en": "You approve the plan, then I launch the campaigns."
+      },
+      {
+        "when_fr": "Chaque mois",
+        "when_en": "Every month",
+        "title_fr": "Suivi et rapport",
+        "title_en": "Tracking and reporting",
+        "text_fr": "J'ajuste les campagnes chaque semaine et vous recevez un rapport à la fin du mois.",
+        "text_en": "I adjust the campaigns every week and you get a report at the end of the month."
+      }
+    ]
   },
   "about": {
     "title_fr": "Pourquoi travailler avec moi",
     "title_en": "Why work with me",
-    "r1Title_fr": "Je connais le commerce en ligne de l'intérieur",
-    "r1Title_en": "I know e-commerce from the inside",
-    "r1Text_fr": "J'ai géré pendant plus de trois ans la publicité et les fiches produits d'un détaillant en ligne. Je tiens compte de vos marges et de vos stocks dans chaque campagne.",
-    "r1Text_en": "For more than three years, I ran the advertising and product listings of an online retailer. I factor your margins and inventory into every campaign.",
-    "r2Title_fr": "Vous traitez directement avec moi",
-    "r2Title_en": "You deal with me directly",
-    "r2Text_fr": "La personne qui répond à vos courriels est celle qui gère vos campagnes.",
-    "r2Text_en": "The person answering your emails is the one running your campaigns.",
-    "r3Title_fr": "Je travaille en français et en anglais",
-    "r3Title_en": "I work in English and French",
-    "r3Text_fr": "Vos campagnes peuvent rejoindre vos clients partout au Canada.",
-    "r3Text_en": "Your campaigns can reach customers anywhere in Canada.",
+    "reasons": [
+      {
+        "title_fr": "Je connais le commerce en ligne de l'intérieur",
+        "title_en": "I know e-commerce from the inside",
+        "text_fr": "J'ai géré pendant plus de trois ans la publicité et les fiches produits d'un détaillant en ligne. Je tiens compte de vos marges et de vos stocks dans chaque campagne.",
+        "text_en": "For more than three years, I ran the advertising and product listings of an online retailer. I factor your margins and inventory into every campaign."
+      },
+      {
+        "title_fr": "Vous traitez directement avec moi",
+        "title_en": "You deal with me directly",
+        "text_fr": "La personne qui répond à vos courriels est celle qui gère vos campagnes.",
+        "text_en": "The person answering your emails is the one running your campaigns."
+      },
+      {
+        "title_fr": "Je travaille en français et en anglais",
+        "title_en": "I work in English and French",
+        "text_fr": "Vos campagnes peuvent rejoindre vos clients partout au Canada.",
+        "text_en": "Your campaigns can reach customers anywhere in Canada."
+      }
+    ],
     "fact1_fr": "Spécialiste en publicité et en référencement depuis 2024, coordonnateur du contenu e-commerce de 2023 à 2024",
     "fact1_en": "Advertising and search specialist since 2024, e-commerce content coordinator from 2023 to 2024",
     "fact2_fr": "AEC en coordination de commerce électronique, Cégep de l'Outaouais",
