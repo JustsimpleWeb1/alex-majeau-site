@@ -1,26 +1,10 @@
 // Textes d'interface en français (étiquettes, maquettes animées, formulaire).
-// Les textes qu'Alex modifie sont dans src/content/fr.json (éditeur Pages CMS).
+// Les textes qu'Alex modifie sont dans src/content/site.json (éditeur Pages CMS).
 export const fr = {
   "meta": {
     "lang": "fr-CA",
     "ogLocale": "fr_CA",
     "ogLocaleAlt": "en_CA"
-  },
-  "schema": {
-    "jobTitle": "Consultant Google Ads et Meta Ads",
-    "serviceDesc": "Gestion de la publicité Google et Facebook pour les boutiques de sport en ligne.",
-    "area": "Québec",
-    "catalog": "Services de publicité en ligne",
-    "knowsAbout": [
-      "Google Ads",
-      "Google Shopping",
-      "Google Merchant Center",
-      "Meta Ads",
-      "Publicité Facebook",
-      "Publicité Instagram",
-      "Google Analytics 4",
-      "Commerce électronique"
-    ]
   },
   "a11y": {
     "skip": "Aller au contenu"
@@ -46,7 +30,6 @@ export const fr = {
   },
   "hero": {
     "seeResults": "Voir les résultats",
-    "photoLabel": "Emplacement de la photo d'Alexandre Majeau",
     "photoCap": "Photo d'Alex · portrait au travail",
     "t1Title": "Annonce Google en ligne",
     "t1Sub": "« skis de fond »",
@@ -126,7 +109,6 @@ export const fr = {
     "next3": "Baisser la fréquence des publicités Facebook"
   },
   "about": {
-    "photoLabel": "Emplacement d'une deuxième photo d'Alexandre Majeau",
     "photoCap": "Photo d'Alex · en contexte sport",
     "eduLabel": "Formation",
     "linkedin": "Voir mon profil LinkedIn"
@@ -172,13 +154,8 @@ export const fr = {
     "privacy": "Politique de confidentialité"
   },
   "footer": {
-    "srTitle": "Alexandre Majeau, consultant Google Ads et Meta Ads",
     "navLabel": "Pied de page",
     "siteHeading": "Le site",
-    "svc1": "Publicité Facebook et Instagram",
-    "svc2": "Publicité sur la recherche Google",
-    "svc3": "Google Shopping et Merchant Center",
-    "svc4": "Suivi des ventes et rapports",
     "city": "Blainville, Québec",
     "langs": "Service en français et en anglais",
     "rights": "Tous droits réservés.",

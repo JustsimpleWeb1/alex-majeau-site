@@ -1,27 +1,11 @@
 // English interface copy (served at /en/). Same keys as fr.ts.
-// Editable copy lives in src/content/en.json (Pages CMS editor).
+// Editable copy lives in src/content/site.json (Pages CMS editor).
 import type { UiDict } from './index';
 export const en: UiDict = {
   "meta": {
     "lang": "en-CA",
     "ogLocale": "en_CA",
     "ogLocaleAlt": "fr_CA"
-  },
-  "schema": {
-    "jobTitle": "Google Ads and Meta Ads consultant",
-    "serviceDesc": "Google and Facebook advertising management for online sports stores.",
-    "area": "Quebec",
-    "catalog": "Online advertising services",
-    "knowsAbout": [
-      "Google Ads",
-      "Google Shopping",
-      "Google Merchant Center",
-      "Meta Ads",
-      "Facebook advertising",
-      "Instagram advertising",
-      "Google Analytics 4",
-      "E-commerce"
-    ]
   },
   "a11y": {
     "skip": "Skip to content"
@@ -47,7 +31,6 @@ export const en: UiDict = {
   },
   "hero": {
     "seeResults": "See the results",
-    "photoLabel": "Placeholder for a photo of Alexandre Majeau",
     "photoCap": "Alex's photo · at work",
     "t1Title": "Google ad is live",
     "t1Sub": "“cross-country skis”",
@@ -127,7 +110,6 @@ export const en: UiDict = {
     "next3": "Lower the frequency of Facebook ads"
   },
   "about": {
-    "photoLabel": "Placeholder for a second photo of Alexandre Majeau",
     "photoCap": "Alex's photo · sports setting",
     "eduLabel": "Education",
     "linkedin": "View my LinkedIn profile"
@@ -173,13 +155,8 @@ export const en: UiDict = {
     "privacy": "Privacy policy"
   },
   "footer": {
-    "srTitle": "Alexandre Majeau, Google Ads and Meta Ads consultant",
     "navLabel": "Footer",
     "siteHeading": "Site",
-    "svc1": "Facebook and Instagram ads",
-    "svc2": "Google Search ads",
-    "svc3": "Google Shopping and Merchant Center",
-    "svc4": "Sales tracking and reporting",
     "city": "Blainville, Quebec",
     "langs": "Service in English and French",
     "rights": "All rights reserved.",

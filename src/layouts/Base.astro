@@ -9,33 +9,33 @@ const t = dictionaries[lang];
 const base = Astro.site!;
 const url = (p: string) => new URL(p, base).href;
 const canonical = url(paths[lang]);
-const ogImage = url('/og-image.jpg');
+const ogImage = url(t.seo.image);
 const home = url('/');
 
 // Données structurées (Person, ProfessionalService, WebSite, WebPage, FAQPage).
 const svcAnchors = ['etape-social', 'etape-recherche', 'etape-shopping', 'etape-suivi'];
-const svcNames = [t.footer.svc1, t.footer.svc2, t.footer.svc3, t.footer.svc4];
+const svcNames = [t.seo.svc1, t.seo.svc2, t.seo.svc3, t.seo.svc4];
 const jsonld = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'Person', '@id': `${home}#alexandre`, name: 'Alexandre Majeau', jobTitle: t.schema.jobTitle, url: home,
+      '@type': 'Person', '@id': `${home}#alexandre`, name: 'Alexandre Majeau', jobTitle: t.seo.jobTitle, url: home,
       address: { '@type': 'PostalAddress', addressLocality: 'Blainville', addressRegion: 'QC', addressCountry: 'CA' },
       alumniOf: { '@type': 'EducationalOrganization', name: "Cégep de l'Outaouais" },
-      knowsLanguage: ['fr-CA', 'en-CA'], knowsAbout: t.schema.knowsAbout, sameAs: [site.linkedin],
+      knowsLanguage: ['fr-CA', 'en-CA'], knowsAbout: t.seo.knowsAbout, sameAs: [site.linkedin],
     },
     {
-      '@type': 'ProfessionalService', '@id': `${canonical}#service`, name: t.footer.srTitle, description: t.schema.serviceDesc,
+      '@type': 'ProfessionalService', '@id': `${canonical}#service`, name: t.seo.serviceName, description: t.seo.serviceDesc,
       url: canonical, founder: { '@id': `${home}#alexandre` },
       address: { '@type': 'PostalAddress', addressLocality: 'Blainville', addressRegion: 'QC', addressCountry: 'CA' },
-      areaServed: { '@type': 'AdministrativeArea', name: t.schema.area }, availableLanguage: ['fr', 'en'],
+      areaServed: { '@type': 'AdministrativeArea', name: t.seo.area }, availableLanguage: ['fr', 'en'],
       hasOfferCatalog: {
-        '@type': 'OfferCatalog', name: t.schema.catalog,
+        '@type': 'OfferCatalog', name: t.seo.catalog,
         itemListElement: svcNames.map((name, i) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name, url: `${canonical}#${svcAnchors[i]}` } })),
       },
     },
     { '@type': 'WebSite', '@id': `${canonical}#site`, url: canonical, name: 'Alexandre Majeau', inLanguage: t.meta.lang, publisher: { '@id': `${home}#alexandre` } },
-    { '@type': 'WebPage', '@id': `${canonical}#page`, url: canonical, isPartOf: { '@id': `${canonical}#site` }, about: { '@id': `${canonical}#service` }, inLanguage: t.meta.lang, name: t.meta.title },
+    { '@type': 'WebPage', '@id': `${canonical}#page`, url: canonical, isPartOf: { '@id': `${canonical}#site` }, about: { '@id': `${canonical}#service` }, inLanguage: t.meta.lang, name: t.seo.title },
     {
       '@type': 'FAQPage', '@id': `${canonical}#faq`,
       mainEntity: t.faq.items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
@@ -48,8 +48,8 @@ const jsonld = {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{t.meta.title}</title>
-<meta name="description" content={t.meta.description}>
+<title>{t.seo.title}</title>
+<meta name="description" content={t.seo.description}>
 <meta name="robots" content={site.indexable ? 'index, follow' : 'noindex, nofollow'}>
 <link rel="canonical" href={canonical}>
 <link rel="alternate" hreflang="fr-CA" href={url(paths.fr)}>
@@ -61,8 +61,8 @@ const jsonld = {
 <meta property="og:locale" content={t.meta.ogLocale}>
 <meta property="og:locale:alternate" content={t.meta.ogLocaleAlt}>
 <meta property="og:site_name" content="Alexandre Majeau">
-<meta property="og:title" content={t.meta.title}>
-<meta property="og:description" content={t.meta.description}>
+<meta property="og:title" content={t.seo.title}>
+<meta property="og:description" content={t.seo.description}>
 <meta property="og:url" content={canonical}>
 <meta property="og:image" content={ogImage}>
 <meta property="og:image:width" content="1200">

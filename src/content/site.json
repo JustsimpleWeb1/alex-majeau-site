@@ -1,0 +1,229 @@
+{
+  "seo": {
+    "title_fr": "Alexandre Majeau | Consultant Google Ads et Meta Ads pour boutiques de sport en ligne",
+    "title_en": "Alexandre Majeau | Google Ads and Meta Ads Consultant for Online Sports Stores",
+    "description_fr": "Je gère la publicité Google et Facebook des boutiques de sport en ligne. Plus de ventes avec le même budget publicitaire.",
+    "description_en": "I run Google and Facebook advertising for online sports stores. More sales from the same ad budget.",
+    "image": "/images/og-image.jpg",
+    "serviceName_fr": "Alexandre Majeau, consultant Google Ads et Meta Ads",
+    "serviceName_en": "Alexandre Majeau, Google Ads and Meta Ads consultant",
+    "jobTitle_fr": "Consultant Google Ads et Meta Ads",
+    "jobTitle_en": "Google Ads and Meta Ads consultant",
+    "serviceDesc_fr": "Gestion de la publicité Google et Facebook pour les boutiques de sport en ligne.",
+    "serviceDesc_en": "Google and Facebook advertising management for online sports stores.",
+    "area_fr": "Québec",
+    "area_en": "Quebec",
+    "catalog_fr": "Services de publicité en ligne",
+    "catalog_en": "Online advertising services",
+    "svc1_fr": "Publicité Facebook et Instagram",
+    "svc1_en": "Facebook and Instagram ads",
+    "svc2_fr": "Publicité sur la recherche Google",
+    "svc2_en": "Google Search ads",
+    "svc3_fr": "Google Shopping et Merchant Center",
+    "svc3_en": "Google Shopping and Merchant Center",
+    "svc4_fr": "Suivi des ventes et rapports",
+    "svc4_en": "Sales tracking and reporting",
+    "knowsAbout": [
+      {
+        "fr": "Google Ads",
+        "en": "Google Ads"
+      },
+      {
+        "fr": "Google Shopping",
+        "en": "Google Shopping"
+      },
+      {
+        "fr": "Google Merchant Center",
+        "en": "Google Merchant Center"
+      },
+      {
+        "fr": "Meta Ads",
+        "en": "Meta Ads"
+      },
+      {
+        "fr": "Publicité Facebook",
+        "en": "Facebook advertising"
+      },
+      {
+        "fr": "Publicité Instagram",
+        "en": "Instagram advertising"
+      },
+      {
+        "fr": "Google Analytics 4",
+        "en": "Google Analytics 4"
+      },
+      {
+        "fr": "Commerce électronique",
+        "en": "E-commerce"
+      }
+    ],
+    "heroPhotoAlt_fr": "Emplacement de la photo d'Alexandre Majeau",
+    "heroPhotoAlt_en": "Placeholder for a photo of Alexandre Majeau",
+    "aboutPhotoAlt_fr": "Emplacement d'une deuxième photo d'Alexandre Majeau",
+    "aboutPhotoAlt_en": "Placeholder for a second photo of Alexandre Majeau"
+  },
+  "hero": {
+    "role_fr": "Consultant Google Ads et Meta Ads pour boutiques de sport en ligne",
+    "role_en": "Google Ads and Meta Ads consultant for sports stores",
+    "titleStart_fr": "Plus de ventes avec",
+    "titleStart_en": "More sales from",
+    "titleHl_fr": "le même budget",
+    "titleHl_en": "the same ad budget",
+    "titleEnd_fr": "publicitaire",
+    "titleEnd_en": "",
+    "lede_fr": "Je gère vos campagnes Google et Facebook, et vous voyez chaque mois ce qu'elles vous rapportent.",
+    "lede_en": "I run your Google and Facebook campaigns, and every month you see what they bring in."
+  },
+  "cta": {
+    "primary_fr": "Réserver un appel gratuit",
+    "primary_en": "Book a free call"
+  },
+  "services": {
+    "title_fr": "Ce que je fais pour vous",
+    "title_en": "What I do for you",
+    "shoppingTitle_fr": "Vos produits apparaissent plusieurs fois quand un client les cherche",
+    "shoppingTitle_en": "Your products show up more than once when a customer searches for them",
+    "shoppingText_fr": "Je prépare votre catalogue dans Merchant Center avec une fiche par couleur et par grandeur.",
+    "shoppingText_en": "I set up your catalogue in Merchant Center with a listing for every colour and size.",
+    "searchTitle_fr": "Vous apparaissez quand un client cherche ce que vous vendez",
+    "searchTitle_en": "You show up when a customer searches for what you sell",
+    "searchText_fr": "Je choisis les mots-clés qui mènent à des ventes et je retire ceux qui coûtent sans rien rapporter.",
+    "searchText_en": "I choose the keywords that lead to sales and drop the ones that cost money without bringing any in.",
+    "socialTitle_fr": "De nouveaux clients découvrent votre boutique",
+    "socialTitle_en": "New customers discover your store",
+    "socialText_fr": "Je montre vos produits à des gens qui ne vous connaissent pas encore, puis je les relance jusqu'à l'achat sans les lasser.",
+    "socialText_en": "I show your products to people who don't know you yet, then follow up until they buy, without wearing them out.",
+    "trackTitle_fr": "Vous savez ce que chaque campagne vous rapporte",
+    "trackTitle_en": "You know what each campaign brings in",
+    "trackText_fr": "Je configure Google Analytics 4 et je vous envoie un rapport clair chaque mois.",
+    "trackText_en": "I set up Google Analytics 4 and send you a clear report every month.",
+    "scope_fr": "Pour votre site web ou votre image de marque, je vous réfère à des spécialistes avec qui je travaille.",
+    "scope_en": "For your website or your branding, I refer you to specialists I work with."
+  },
+  "results": {
+    "label_fr": "Primeau Vélo, détaillant de vélos · 2023 à 2026",
+    "label_en": "Primeau Vélo, bike retailer · 2023 to 2026",
+    "title_fr": "Les résultats de mes campagnes",
+    "title_en": "My campaign results",
+    "num1": 300,
+    "bib1_fr": "de ventes générées par la publicité en trois ans",
+    "bib1_en": "in sales generated by advertising over three years",
+    "num2": 700,
+    "bib2_fr": "de rendement sur la publicité Facebook",
+    "bib2_en": "return on Facebook advertising",
+    "bib2Plain_fr": "Chaque dollar investi rapporte maintenant 8 fois plus qu'en 2023.",
+    "bib2Plain_en": "Every dollar invested now brings in 8 times more than in 2023.",
+    "note_fr": "Ces résultats viennent des quatre services décrits plus haut.",
+    "note_en": "These results come from the four services described above.",
+    "quote_fr": "[Citation d'un gestionnaire de Primeau Vélo sur le travail d'Alex]",
+    "quote_en": "[Quote from a Primeau Vélo manager about Alex's work]",
+    "quoteName_fr": "[Prénom Nom]",
+    "quoteName_en": "[First Last]",
+    "quoteRole_fr": "[titre], Primeau Vélo",
+    "quoteRole_en": "[title], Primeau Vélo",
+    "panelCta_fr": "Et si c'était votre boutique?",
+    "panelCta_en": "What if it were your store?"
+  },
+  "jargon": {
+    "title_fr": "ROI, ROAS, CPA, CPM… C'est du chinois pour vous?",
+    "title_en": "ROI, ROAS, CPA, CPM… All Greek to you?",
+    "intro_fr": "Moi, je lis ces chiffres tous les jours. Vous, vous avez une boutique à faire rouler. Je vous traduis chaque chiffre en une phrase claire : ce que vous avez payé, ce que ça vous a rapporté et ce que je change.",
+    "intro_en": "I read these numbers every day. You have a store to run. I translate each one into a clear sentence: what you paid, what it brought in and what I'm changing."
+  },
+  "method": {
+    "title_fr": "Comment se déroule un mandat",
+    "title_en": "How we work together",
+    "s1Title_fr": "Appel gratuit",
+    "s1Title_en": "Free call",
+    "s1Text_fr": "Vous me présentez votre boutique et vos objectifs, et je vous dis si je peux vous aider.",
+    "s1Text_en": "You tell me about your store and your goals, and I tell you whether I can help.",
+    "s2Title_fr": "Audit de vos comptes",
+    "s2Title_en": "Account audit",
+    "s2Text_fr": "Vous recevez la liste des dépenses qui ne génèrent pas de ventes.",
+    "s2Text_en": "You get a list of the spending that isn't generating sales.",
+    "s3Title_fr": "Plan et lancement",
+    "s3Title_en": "Plan and launch",
+    "s3Text_fr": "Vous approuvez le plan, puis je lance les campagnes.",
+    "s3Text_en": "You approve the plan, then I launch the campaigns.",
+    "s4Title_fr": "Suivi et rapport",
+    "s4Title_en": "Tracking and reporting",
+    "s4Text_fr": "J'ajuste les campagnes chaque semaine et vous recevez un rapport à la fin du mois.",
+    "s4Text_en": "I adjust the campaigns every week and you get a report at the end of the month."
+  },
+  "about": {
+    "title_fr": "Pourquoi travailler avec moi",
+    "title_en": "Why work with me",
+    "r1Title_fr": "Je connais le commerce en ligne de l'intérieur",
+    "r1Title_en": "I know e-commerce from the inside",
+    "r1Text_fr": "J'ai géré pendant plus de trois ans la publicité et les fiches produits d'un détaillant en ligne. Je tiens compte de vos marges et de vos stocks dans chaque campagne.",
+    "r1Text_en": "For more than three years, I ran the advertising and product listings of an online retailer. I factor your margins and inventory into every campaign.",
+    "r2Title_fr": "Vous traitez directement avec moi",
+    "r2Title_en": "You deal with me directly",
+    "r2Text_fr": "La personne qui répond à vos courriels est celle qui gère vos campagnes.",
+    "r2Text_en": "The person answering your emails is the one running your campaigns.",
+    "r3Title_fr": "Je travaille en français et en anglais",
+    "r3Title_en": "I work in English and French",
+    "r3Text_fr": "Vos campagnes peuvent rejoindre vos clients partout au Canada.",
+    "r3Text_en": "Your campaigns can reach customers anywhere in Canada.",
+    "fact1_fr": "Spécialiste en publicité et en référencement depuis 2024, coordonnateur du contenu e-commerce de 2023 à 2024",
+    "fact1_en": "Advertising and search specialist since 2024, e-commerce content coordinator from 2023 to 2024",
+    "fact2_fr": "AEC en coordination de commerce électronique, Cégep de l'Outaouais",
+    "fact2_en": "College certificate (AEC) in e-commerce coordination, Cégep de l'Outaouais"
+  },
+  "booking": {
+    "title_fr": "30 minutes pour voir ce que votre publicité pourrait rapporter",
+    "title_en": "30 minutes to see what your advertising could bring in",
+    "lede_fr": "L'appel est gratuit et sans engagement. Avant, je regarde votre boutique en ligne pour arriver avec des questions précises. Si je ne peux pas vous aider, je vous le dis.",
+    "lede_en": "The call is free, with no commitment. Beforehand, I look at your online store so I come with specific questions. If I can't help you, I'll tell you.",
+    "role_fr": "Consultant Google Ads et Meta Ads, Blainville",
+    "role_en": "Google Ads and Meta Ads consultant, Blainville"
+  },
+  "footer": {
+    "about_fr": "Consultant Google Ads et Meta Ads pour les boutiques de sport en ligne. Basé à Blainville, sur la Rive-Nord de Montréal.",
+    "about_en": "Google Ads and Meta Ads consultant for online sports stores. Based in Blainville, on Montreal's North Shore."
+  },
+  "faq": {
+    "title_fr": "Questions fréquentes",
+    "title_en": "Frequently asked questions",
+    "intro_fr": "Une autre question? Écrivez-moi à",
+    "intro_en": "Another question? Email me at",
+    "items": [
+      {
+        "q_fr": "Combien coûtent vos services?",
+        "q_en": "How much do your services cost?",
+        "a_fr": "Mes mandats commencent à [X] $ par mois. Le prix dépend du nombre de plateformes et de la taille de votre catalogue. Le budget publicitaire est payé directement à Google et à Meta.",
+        "a_en": "My engagements start at $[X] per month. The price depends on the number of platforms and the size of your catalogue. Your ad budget is paid directly to Google and Meta."
+      },
+      {
+        "q_fr": "Quel budget publicitaire faut-il au minimum?",
+        "q_en": "What's the minimum ad budget?",
+        "a_fr": "Je recommande au moins [X] $ par mois. Avec moins, les plateformes n'ont pas assez de données pour bien diffuser vos publicités.",
+        "a_en": "I recommend at least $[X] per month. With less, the platforms don't have enough data to deliver your ads well."
+      },
+      {
+        "q_fr": "Combien de temps avant de voir des résultats?",
+        "q_en": "How long before I see results?",
+        "a_fr": "Les premiers ajustements donnent souvent des résultats en quelques semaines. Une stratégie complète prend de deux à trois mois à mettre au point.",
+        "a_en": "The first adjustments often show results within a few weeks. A complete strategy takes two to three months to fine-tune."
+      },
+      {
+        "q_fr": "Travaillez-vous avec Shopify, WooCommerce ou Magento?",
+        "q_en": "Do you work with Shopify, WooCommerce or Magento?",
+        "a_fr": "Oui. J'ai travaillé sur Magento chez Primeau Vélo et j'ai étudié Shopify et WordPress au cégep. Les campagnes fonctionnent de la même façon sur ces plateformes.",
+        "a_en": "Yes. I worked on Magento at Primeau Vélo and studied Shopify and WordPress in college. Campaigns work the same way on all of these platforms."
+      },
+      {
+        "q_fr": "À qui appartiennent les comptes publicitaires?",
+        "q_en": "Who owns the ad accounts?",
+        "a_fr": "Ils restent à votre nom. Si vous mettez fin au mandat, vous gardez l'historique et les campagnes.",
+        "a_en": "They stay in your name. If you end our engagement, you keep the history and the campaigns."
+      },
+      {
+        "q_fr": "Travaillez-vous seulement avec des boutiques de sport?",
+        "q_en": "Do you only work with sports stores?",
+        "a_fr": "C'est dans ce domaine que j'ai le plus d'expérience. Si votre boutique vend autre chose, écrivez-moi et je vous dirai si je peux vous aider.",
+        "a_en": "That's where I have the most experience. If your store sells something else, email me and I'll tell you whether I can help."
+      }
+    ]
+  }
+}

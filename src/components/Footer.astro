@@ -5,7 +5,7 @@ interface Props { t: Dict; alt: string; }
 const { t, alt } = Astro.props;
 ---
 <footer class="site" aria-labelledby="pied-titre">
-  <h2 id="pied-titre" class="sr-only">{t.footer.srTitle}</h2>
+  <h2 id="pied-titre" class="sr-only">{t.seo.serviceName}</h2>
   <div class="wrap foot-grid">
     <div class="foot-brand">
       <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true"></span>Alexandre Majeau</a>
@@ -25,10 +25,10 @@ const { t, alt } = Astro.props;
     <div class="foot-col">
       <p class="foot-h">Services</p>
       <ul>
-        <li><a href="#etape-social">{t.footer.svc1}</a></li>
-        <li><a href="#etape-recherche">{t.footer.svc2}</a></li>
-        <li><a href="#etape-shopping">{t.footer.svc3}</a></li>
-        <li><a href="#etape-suivi">{t.footer.svc4}</a></li>
+        <li><a href="#etape-social">{t.seo.svc1}</a></li>
+        <li><a href="#etape-recherche">{t.seo.svc2}</a></li>
+        <li><a href="#etape-shopping">{t.seo.svc3}</a></li>
+        <li><a href="#etape-suivi">{t.seo.svc4}</a></li>
       </ul>
     </div>
     <address class="foot-col">
