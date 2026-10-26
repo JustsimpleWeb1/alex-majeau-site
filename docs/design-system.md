@@ -89,6 +89,7 @@ Inventorier ici avant de créer. Réutiliser par défaut. Un nouveau composant s
 - **Questions fréquentes** : ajouter, retirer ou réordonner un élément de `faq.items`. Google lit aussi ces questions.
 - **Étapes de la méthode** : ajouter un élément à `method.steps` (`when`, `title`, `text`). Les quatre premières ont chacune leur pictogramme; les suivantes prennent le pictogramme de validation.
 - **Raisons « Pourquoi travailler avec moi »** : ajouter un élément à `about.reasons` (`title`, `text`).
+- **Chiffres des résultats** : `num1`/`num2` (nombre entier, animé), avec `before` et `after` pour le format, par langue : `+` et `%` pour une hausse, `$` avant le nombre en anglais et après en français pour un montant.
 - **Tous les textes et le référencement** : modifier la valeur dans `site.json`, en français et en anglais.
 
 ### Ce qui demande Simon

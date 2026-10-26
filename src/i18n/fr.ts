@@ -61,7 +61,6 @@ export const fr = {
     "trackLabel": "Suivi des ventes"
   },
   "results": {
-    "pct": "<small>&nbsp;%</small>",
     "quoteOpen": "«&nbsp;",
     "quoteClose": "&nbsp;»"
   },

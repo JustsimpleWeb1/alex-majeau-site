@@ -11,12 +11,13 @@ const { t } = Astro.props;
       <div class="bibs">
         <div class="bib">
           <span class="pin a"></span><span class="pin b"></span><span class="pin c"></span><span class="pin d"></span>
-          <div class="num" data-count={t.results.num1}>+{t.results.num1}<Fragment set:html={t.results.pct} /></div>
+          <div class="num" data-count={t.results.num1} data-before={t.results.before1}>{t.results.before1}{t.results.num1}{t.results.after1 && <small>{t.results.after1}</small>}</div>
           <p class="what">{t.results.bib1}</p>
+          <p class="plain">{t.results.bib1Plain}</p>
         </div>
         <div class="bib">
           <span class="pin a"></span><span class="pin b"></span><span class="pin c"></span><span class="pin d"></span>
-          <div class="num" data-count={t.results.num2}>+{t.results.num2}<Fragment set:html={t.results.pct} /></div>
+          <div class="num" data-count={t.results.num2} data-before={t.results.before2}>{t.results.before2}{t.results.num2}{t.results.after2 && <small>{t.results.after2}</small>}</div>
           <p class="what">{t.results.bib2}</p>
           <p class="plain">{t.results.bib2Plain}</p>
         </div>
