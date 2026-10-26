@@ -1,61 +1,81 @@
-# Modifier ton site : le guide
+# Ton site : le guide
 
-Tu as deux façons de modifier ton site :
+Ton site vit à deux endroits :
 
-- **Les textes** se modifient dans un éditeur en ligne, sans toucher au code. C'est fait en deux minutes.
-- **La structure et le SEO** (sections, balises, données structurées) se travaillent avec Claude Code.
+- **GitHub** garde le code et les textes : https://github.com/JustsimpleWeb1/alex-majeau-site
+- **Netlify** l'héberge : https://alexandre-majeau.netlify.app/
 
-Quand une modification arrive sur la branche `main`, Netlify remet le site en ligne tout seul en une ou deux minutes : https://alexandre-majeau.netlify.app/
+Tu n'as jamais à publier à la main. Dès qu'une modification arrive sur la branche `main` de GitHub, Netlify remet le site en ligne tout seul en une minute.
 
-## Avant de commencer
+## Quel outil pour quoi
 
-1. Accepte l'invitation GitHub de Simon pour le dépôt `JustsimpleWeb1/alex-majeau-site`. Elle arrive par courriel et sur github.com, dans tes notifications.
-2. C'est tout pour les textes. Pour Claude Code, voir plus bas.
+| Tu veux… | Utilise | D'où |
+|---|---|---|
+| Changer un texte vite fait | Pages CMS | N'importe où, même ton téléphone |
+| Modifier la page, une section, le SEO, en voyant le rendu | Claude Code | Ton ordi |
+| Demander une modification loin de ton ordi | Claude Code sur le web | Navigateur ou app Claude |
 
-## Modifier un texte
+## Une seule fois : t'installer
 
-1. Va sur https://app.pagescms.org et connecte-toi avec ton compte GitHub.
-2. Choisis le dépôt **alex-majeau-site**, puis la branche **main**.
-3. Ouvre **Textes du site (français)**. Les textes sont rangés par section, dans l'ordre de la page.
-4. Modifie ce que tu veux, puis clique sur **Save**.
-5. Fais la même chose dans **Textes du site (anglais)**, pour que les deux versions disent la même chose.
-6. Attends une ou deux minutes et recharge ton site.
+1. Accepte l'invitation GitHub de Simon. Elle arrive par courriel et dans tes notifications sur github.com.
+2. Installe [GitHub Desktop](https://desktop.github.com) et connecte ton compte GitHub. Fais ensuite **File → Clone repository** et choisis `alex-majeau-site`.
+3. Installe [Node.js 22](https://nodejs.org) (version LTS).
+4. Ouvre l'app Claude, onglet **Code**, sur le dossier `alex-majeau-site`.
+
+Pages CMS et Claude Code sur le web ne demandent rien d'installer. Ils te demandent seulement de te connecter avec GitHub la première fois.
+
+## Changer un texte avec Pages CMS
+
+1. Va sur https://app.pagescms.org et connecte-toi avec GitHub.
+2. Ouvre **alex-majeau-site**, branche **main**.
+3. Ouvre **Textes du site (français)**, modifie, puis clique sur **Save**.
+4. Fais la même chose dans **Textes du site (anglais)**.
+5. Attends une minute et recharge ton site.
+
+Pages CMS ne montre pas d'aperçu : tu vois le résultat sur ton site une minute après avoir enregistré. Si c'est mal sorti, corrige et enregistre de nouveau.
 
 Bon à savoir :
 
-- **Grand titre** : il est coupé en trois champs. Le champ du milieu est la partie surlignée en bleu.
-- **Chiffres des résultats** : écris le nombre seulement (`300`). Le `+` et le `%` s'ajoutent tout seuls.
-- **Citation** : écris-la sans guillemets. Ils s'ajoutent tout seuls.
-- **Questions fréquentes** : tu peux en ajouter, en retirer et changer leur ordre.
-- **Titre et description dans Google** : ils sont en haut, dans « Référencement Google ».
+- **Grand titre** : coupé en trois champs. Celui du milieu est la partie surlignée en bleu.
+- **Chiffres des résultats** : le nombre seulement (`300`). Le `+` et le `%` s'ajoutent tout seuls.
+- **Citation** : sans guillemets. Ils s'ajoutent tout seuls.
+- **Questions fréquentes** : tu peux en ajouter, en retirer et changer l'ordre.
+- **Titre et description dans Google** : en haut, dans « Référencement Google ».
 
-L'éditeur ne couvre pas les petites maquettes animées (la recherche Google, la publication Facebook, le rapport), les photos, ton courriel ni ton calendrier. Pour ça, passe par Claude Code ou écris à Simon.
+Les photos, les petites maquettes animées, ton courriel et ton calendrier ne sont pas dans Pages CMS. Pour ça, passe par Claude Code.
 
-## Travailler la structure et le SEO avec Claude Code
+## Modifier ton site avec Claude Code
 
-### Une seule fois
+Tu écris à Claude en français, comme à une personne. Par exemple :
 
-1. Installe [GitHub Desktop](https://desktop.github.com) et connecte-le à ton compte GitHub.
-2. Dans GitHub Desktop : **File → Clone repository**, choisis `alex-majeau-site`.
-3. Installe [Node.js 22](https://nodejs.org) (version LTS).
-4. Ouvre Claude Code (l'application Claude, onglet Code) sur le dossier `alex-majeau-site`. Claude lit le fichier `CLAUDE.md` du dossier : il connaît déjà les règles du site.
+> Ajoute une question à la FAQ sur les délais, en français et en anglais. Montre-moi le rendu, puis ouvre une pull request.
 
-### À chaque chantier
+Claude va récupérer la dernière version du site, créer une branche, faire les changements et t'afficher le site à côté de la conversation. Tu peux lui demander des ajustements autant que tu veux. Quand c'est bon, il ouvre une pull request sur GitHub.
 
-1. Dans GitHub Desktop, clique sur **Fetch origin** pour partir de la dernière version.
-2. Demande à Claude de créer une branche, par exemple : « Crée une branche seo-balises-faq ».
-3. Explique ce que tu veux changer. Demande-lui ensuite de lancer le site en local (`npm run dev`) pour le voir sur http://localhost:4321.
-4. Quand c'est bon, demande-lui de faire le commit, de pousser la branche et d'ouvrir une pull request.
-5. Netlify ajoute à la pull request un lien d'**aperçu** (Deploy Preview). Vérifie la page sur ordinateur et sur téléphone.
-6. Si tout est beau, fusionne la pull request (**Merge**) : le site se met à jour.
+Ensuite :
 
-### Les règles à garder
+1. Dans la pull request, Netlify ajoute un lien d'**aperçu** (Deploy Preview). Regarde la page sur ordinateur et sur téléphone.
+2. Si tout est beau, dis à Claude « fusionne la pull request », ou clique sur **Merge** dans GitHub. Ton site se met à jour.
 
-- Toujours le français ET l'anglais.
-- Le site reste invisible pour Google tant que le lancement officiel n'est pas fait avec Simon. Ne touche pas au réglage `indexable`.
-- Si tu ajoutes un texte modifiable, demande à Claude de l'ajouter aussi à l'éditeur (`.pages.yml`).
+Claude connaît déjà les règles du site : elles sont dans le fichier `CLAUDE.md` du dossier, et il le lit tout seul.
+
+## Loin de ton ordi : Claude Code sur le web
+
+1. Va sur https://claude.ai/code, ou dans l'app Claude sur ton téléphone, section Code.
+2. Choisis le dépôt `alex-majeau-site`.
+3. Demande ta modification comme d'habitude, et demande-lui d'ouvrir une pull request.
+4. Ouvre l'aperçu Netlify dans la pull request. Si c'est bon, fusionne.
+
+## Gérer ton site au quotidien
+
+- **Une modification à la fois.** Évite de changer un texte dans Pages CMS pendant que Claude travaille sur le même texte.
+- **Toujours le français et l'anglais.** Les deux versions doivent dire la même chose.
+- **Simon peut travailler en même temps que toi.** Chacun a sa branche, et GitHub réunit vos travaux au moment de fusionner.
+- **Un nouveau texte à modifier dans Pages CMS ?** Demande à Claude de l'ajouter à l'éditeur.
+- **Visibilité dans Google** : le réglage `indexable` se change seulement avec Simon.
 
 ## Si quelque chose se brise
 
-- **Un texte est mal sorti** : corrige-le dans l'éditeur, tout simplement.
-- **Le site ne se met plus à jour, ou une page est cassée** : écris à Simon. Netlify garde toutes les versions précédentes, et on peut remettre la dernière bonne en un clic.
+- **Un texte est mal sorti** : corrige-le dans Pages CMS.
+- **La page est cassée après une modification** : demande à Claude « annule le dernier changement et remets le site comme avant ». Il annule la modification sur `main`, et Netlify remet l'ancienne version en ligne.
+- **Le site ne se met plus à jour du tout** : écris à Simon. L'hébergement, le domaine et les réglages Netlify restent chez lui.
