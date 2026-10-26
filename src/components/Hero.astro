@@ -9,7 +9,7 @@ const { t } = Astro.props;
     <div>
       <div class="byline reveal-load d1"><span class="avatar" aria-hidden="true"></span><span><strong>Alexandre Majeau</strong><small>{t.hero.role}</small></span></div>
       <p class="kicker reveal-load d1"><span class="dot" aria-hidden="true"></span>{t.hero.role}</p>
-      <h1 id="hero-titre" class="display mask-in"><Fragment set:html={t.hero.title} /></h1>
+      <h1 id="hero-titre" class="display mask-in">{t.hero.titleStart} <span class="hl">{t.hero.titleHl}</span>{t.hero.titleEnd && ` ${t.hero.titleEnd}`}</h1>
       <p class="lede reveal-load d3">{t.hero.lede}</p>
       <div class="ctas reveal-load d4">
         <a class="btn btn-hi" id="hero-cta" href="#contact">{t.cta.primary} <svg aria-hidden="true"><use href="#arrow"/></svg></a>

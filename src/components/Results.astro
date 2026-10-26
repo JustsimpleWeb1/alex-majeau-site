@@ -11,19 +11,19 @@ const { t } = Astro.props;
       <div class="bibs">
         <div class="bib">
           <span class="pin a"></span><span class="pin b"></span><span class="pin c"></span><span class="pin d"></span>
-          <div class="num" data-count="300">+300<Fragment set:html={t.results.pct} /></div>
+          <div class="num" data-count={t.results.num1}>+{t.results.num1}<Fragment set:html={t.results.pct} /></div>
           <p class="what">{t.results.bib1}</p>
         </div>
         <div class="bib">
           <span class="pin a"></span><span class="pin b"></span><span class="pin c"></span><span class="pin d"></span>
-          <div class="num" data-count="700">+700<Fragment set:html={t.results.pct} /></div>
+          <div class="num" data-count={t.results.num2}>+{t.results.num2}<Fragment set:html={t.results.pct} /></div>
           <p class="what">{t.results.bib2}</p>
           <p class="plain">{t.results.bib2Plain}</p>
         </div>
       </div>
       <p class="res-note">{t.results.note}</p>
       <figure class="quote">
-        <blockquote><p><Fragment set:html={t.results.quote} /></p></blockquote>
+        <blockquote><p><Fragment set:html={t.results.quoteOpen} />{t.results.quote}<Fragment set:html={t.results.quoteClose} /></p></blockquote>
         <figcaption><span class="q-avatar" aria-hidden="true"></span><span><strong>{t.results.quoteName}</strong>{t.results.quoteRole}</span></figcaption>
       </figure>
       <p class="panel-cta">{t.results.panelCta}</p>

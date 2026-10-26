@@ -1,11 +1,10 @@
-// Textes français du site (langue par défaut, à la racine /).
+// Textes d'interface en français (étiquettes, maquettes animées, formulaire).
+// Les textes qu'Alex modifie sont dans src/content/fr.json (éditeur Pages CMS).
 export const fr = {
   "meta": {
     "lang": "fr-CA",
     "ogLocale": "fr_CA",
-    "ogLocaleAlt": "en_CA",
-    "title": "Alexandre Majeau | Consultant Google Ads et Meta Ads pour boutiques de sport en ligne",
-    "description": "Je gère la publicité Google et Facebook des boutiques de sport en ligne. Plus de ventes avec le même budget publicitaire."
+    "ogLocaleAlt": "en_CA"
   },
   "schema": {
     "jobTitle": "Consultant Google Ads et Meta Ads",
@@ -42,16 +41,10 @@ export const fr = {
     "mobileLabel": "Navigation mobile",
     "faqLong": "Questions fréquentes"
   },
-  "cta": {
-    "primary": "Réserver un appel gratuit"
-  },
   "contact": {
     "preferWrite": "Vous préférez écrire?"
   },
   "hero": {
-    "role": "Consultant Google Ads et Meta Ads pour boutiques de sport",
-    "title": "Plus de ventes avec <span class=\"hl\">le même budget</span> publicitaire",
-    "lede": "Je gère vos campagnes Google et Facebook, et vous voyez chaque mois ce qu'elles vous rapportent.",
     "seeResults": "Voir les résultats",
     "photoLabel": "Emplacement de la photo d'Alexandre Majeau",
     "photoCap": "Photo d'Alex · portrait au travail",
@@ -66,50 +59,30 @@ export const fr = {
     "scrollCue": "Mes services"
   },
   "services": {
-    "title": "Ce que je fais pour vous",
     "youTag": "Vous",
     "shoe": "Soulier de course",
     "size": "Pointure",
     "otherStore": "Autre boutique",
-    "shoppingTitle": "Vos produits apparaissent plusieurs fois quand un client les cherche",
-    "shoppingText": "Je prépare votre catalogue dans Merchant Center avec une fiche par couleur et par grandeur.",
     "query": "bâton de hockey composite",
     "sponsored": "Commandité",
     "adUrl": "· votre-boutique.ca",
     "adTitle": "Bâtons de hockey composites | Votre boutique",
     "adDesc": "Essai en boutique et livraison partout au Québec. Voyez les modèles en stock.",
     "searchLabel": "Recherche Google",
-    "searchTitle": "Vous apparaissez quand un client cherche ce que vous vendez",
-    "searchText": "Je choisis les mots-clés qui mènent à des ventes et je retire ceux qui coûtent sans rien rapporter.",
     "yourStore": "Votre boutique",
     "postCollection": "Collection plein air",
     "postShop": "Magasiner",
     "socialLabel": "Facebook et Instagram",
-    "socialTitle": "De nouveaux clients découvrent votre boutique",
-    "socialText": "Je montre vos produits à des gens qui ne vous connaissent pas encore, puis je les relance jusqu'à l'achat sans les lasser.",
     "chartLabel": "Ventes venant de la publicité",
     "chartPeriod": "6 mois",
-    "trackLabel": "Suivi des ventes",
-    "trackTitle": "Vous savez ce que chaque campagne vous rapporte",
-    "trackText": "Je configure Google Analytics 4 et je vous envoie un rapport clair chaque mois.",
-    "scope": "Pour votre site web ou votre image de marque, je vous réfère à des spécialistes avec qui je travaille."
+    "trackLabel": "Suivi des ventes"
   },
   "results": {
-    "label": "Primeau Vélo, détaillant de vélos · 2023 à 2026",
-    "title": "Les résultats de mes campagnes",
     "pct": "<small>&nbsp;%</small>",
-    "bib1": "de ventes générées par la publicité en trois ans",
-    "bib2": "de rendement sur la publicité Facebook",
-    "bib2Plain": "Chaque dollar investi rapporte maintenant 8 fois plus qu'en 2023.",
-    "note": "Ces résultats viennent des quatre services décrits plus haut.",
-    "quote": "«&nbsp;[Citation d'un gestionnaire de Primeau Vélo sur le travail d'Alex]&nbsp;»",
-    "quoteName": "[Prénom Nom]",
-    "quoteRole": "[titre], Primeau Vélo",
-    "panelCta": "Et si c'était votre boutique?"
+    "quoteOpen": "«&nbsp;",
+    "quoteClose": "&nbsp;»"
   },
   "jargon": {
-    "title": "ROI, ROAS, CPA, CPM… C'est du chinois pour vous?",
-    "intro": "Moi, je lis ces chiffres tous les jours. Vous, vous avez une boutique à faire rouler. Je vous traduis chaque chiffre en une phrase claire : ce que vous avez payé, ce que ça vous a rapporté et ce que je change.",
     "bar": "Septembre · votre boutique",
     "toggleLabel": "Affichage des chiffres",
     "inJargon": "En jargon",
@@ -131,18 +104,9 @@ export const fr = {
     "todoSay": "La campagne hockey coûte plus qu'elle ne rapporte. Je la coupe et je donne son budget au trail, votre meilleure campagne."
   },
   "method": {
-    "title": "Comment se déroule un mandat",
     "w1When": "Semaine 1",
     "w23When": "Semaines 2 et 3",
     "monthlyWhen": "Chaque mois",
-    "s1Title": "Appel gratuit",
-    "s1Text": "Vous me présentez votre boutique et vos objectifs, et je vous dis si je peux vous aider.",
-    "s2Title": "Audit de vos comptes",
-    "s2Text": "Vous recevez la liste des dépenses qui ne génèrent pas de ventes.",
-    "s3Title": "Plan et lancement",
-    "s3Text": "Vous approuvez le plan, puis je lance les campagnes.",
-    "s4Title": "Suivi et rapport",
-    "s4Text": "J'ajuste les campagnes chaque semaine et vous recevez un rapport à la fin du mois.",
     "reportCap": "Votre rapport mensuel ressemble à ceci.",
     "sample": "Exemple",
     "kpiSpent": "Dépensé",
@@ -164,22 +128,10 @@ export const fr = {
   "about": {
     "photoLabel": "Emplacement d'une deuxième photo d'Alexandre Majeau",
     "photoCap": "Photo d'Alex · en contexte sport",
-    "title": "Pourquoi travailler avec moi",
-    "r1Title": "Je connais le commerce en ligne de l'intérieur",
-    "r1Text": "J'ai géré pendant plus de trois ans la publicité et les fiches produits d'un détaillant en ligne. Je tiens compte de vos marges et de vos stocks dans chaque campagne.",
-    "r2Title": "Vous traitez directement avec moi",
-    "r2Text": "La personne qui répond à vos courriels est celle qui gère vos campagnes.",
-    "r3Title": "Je travaille en français et en anglais",
-    "r3Text": "Vos campagnes peuvent rejoindre vos clients partout au Canada.",
-    "fact1": "Spécialiste en publicité et en référencement depuis 2024, coordonnateur du contenu e-commerce de 2023 à 2024",
     "eduLabel": "Formation",
-    "fact2": "AEC en coordination de commerce électronique, Cégep de l'Outaouais",
     "linkedin": "Voir mon profil LinkedIn"
   },
   "booking": {
-    "title": "30 minutes pour voir ce que votre publicité pourrait rapporter",
-    "lede": "L'appel est gratuit et sans engagement. Avant, je regarde votre boutique en ligne pour arriver avec des questions précises. Si je ne peux pas vous aider, je vous le dis.",
-    "role": "Consultant Google Ads et Meta Ads, Blainville",
     "widgetTitle": "Appel gratuit · 30 min",
     "widgetTool": "Agenda Cal.com",
     "step1": "1. Choisissez une plage",
@@ -221,7 +173,6 @@ export const fr = {
   },
   "footer": {
     "srTitle": "Alexandre Majeau, consultant Google Ads et Meta Ads",
-    "about": "Consultant Google Ads et Meta Ads pour les boutiques de sport en ligne. Basé à Blainville, sur la Rive-Nord de Montréal.",
     "navLabel": "Pied de page",
     "siteHeading": "Le site",
     "svc1": "Publicité Facebook et Instagram",
@@ -233,35 +184,5 @@ export const fr = {
     "rights": "Tous droits réservés.",
     "cookies": "Gestion des témoins",
     "siteBy": "Site par"
-  },
-  "faq": {
-    "title": "Questions fréquentes",
-    "intro": "Une autre question? Écrivez-moi à",
-    "items": [
-      {
-        "q": "Combien coûtent vos services?",
-        "a": "Mes mandats commencent à [X] $ par mois. Le prix dépend du nombre de plateformes et de la taille de votre catalogue. Le budget publicitaire est payé directement à Google et à Meta."
-      },
-      {
-        "q": "Quel budget publicitaire faut-il au minimum?",
-        "a": "Je recommande au moins [X] $ par mois. Avec moins, les plateformes n'ont pas assez de données pour bien diffuser vos publicités."
-      },
-      {
-        "q": "Combien de temps avant de voir des résultats?",
-        "a": "Les premiers ajustements donnent souvent des résultats en quelques semaines. Une stratégie complète prend de deux à trois mois à mettre au point."
-      },
-      {
-        "q": "Travaillez-vous avec Shopify, WooCommerce ou Magento?",
-        "a": "Oui. J'ai travaillé sur Magento chez Primeau Vélo et j'ai étudié Shopify et WordPress au cégep. Les campagnes fonctionnent de la même façon sur ces plateformes."
-      },
-      {
-        "q": "À qui appartiennent les comptes publicitaires?",
-        "a": "Ils restent à votre nom. Si vous mettez fin au mandat, vous gardez l'historique et les campagnes."
-      },
-      {
-        "q": "Travaillez-vous seulement avec des boutiques de sport?",
-        "a": "C'est dans ce domaine que j'ai le plus d'expérience. Si votre boutique vend autre chose, écrivez-moi et je vous dirai si je peux vous aider."
-      }
-    ]
   }
 };

@@ -14,7 +14,8 @@ npm run preview    # sert dist/ en local
 
 ## Où modifier quoi
 
-- **Textes** : `src/i18n/fr.ts` et `src/i18n/en.ts` (mêmes clés dans les deux fichiers).
+- **Textes modifiables** : `src/content/fr.json` et `en.json`, aussi éditables dans Pages CMS (`.pages.yml`). Guide d'Alex : `GUIDE-ALEX.md`.
+- **Textes d'interface** : `src/i18n/fr.ts` et `src/i18n/en.ts` (mêmes clés dans les deux fichiers).
 - **Sections** : `src/components/` (une par section, le texte vient des dictionnaires).
 - **Styles** : `src/styles/site.css` (repris tel quel du prototype).
 - **Interactions** : `src/scripts/site.js`.

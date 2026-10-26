@@ -1,0 +1,598 @@
+# Éditeur de textes Pages CMS (https://app.pagescms.org).
+# Chaque enregistrement crée un commit sur main, puis Netlify remet le site en ligne.
+# Les champs doivent correspondre exactement aux clés de src/content/fr.json et en.json.
+content:
+  - name: fr
+    label: "Textes du site (français)"
+    type: file
+    path: src/content/fr.json
+    format: json
+    fields:
+      - name: meta
+        label: "Référencement Google"
+        type: object
+        fields:
+          - name: title
+            label: "Titre dans Google"
+            type: string
+            required: true
+            description: "Le titre bleu affiché dans les résultats de recherche. Environ 60 caractères."
+          - name: description
+            label: "Description dans Google"
+            type: text
+            required: true
+            description: "Le texte gris sous le titre dans Google. Environ 155 caractères."
+      - name: hero
+        label: "Haut de page"
+        type: object
+        fields:
+          - name: role
+            label: "Ton titre professionnel"
+            type: string
+            required: true
+          - name: titleStart
+            label: "Grand titre, début"
+            type: string
+            required: true
+          - name: titleHl
+            label: "Grand titre, partie surlignée en bleu"
+            type: string
+            required: true
+          - name: titleEnd
+            label: "Grand titre, fin"
+            type: string
+            description: "Peut rester vide."
+          - name: lede
+            label: "Phrase sous le grand titre"
+            type: text
+            required: true
+      - name: cta
+        label: "Bouton principal"
+        type: object
+        fields:
+          - name: primary
+            label: "Texte du bouton de réservation"
+            type: string
+            required: true
+            description: "Repris partout sur la page."
+      - name: services
+        label: "Services"
+        type: object
+        fields:
+          - name: title
+            label: "Titre de la section"
+            type: string
+            required: true
+          - name: shoppingTitle
+            label: "Google Shopping, titre"
+            type: string
+            required: true
+          - name: shoppingText
+            label: "Google Shopping, texte"
+            type: text
+            required: true
+          - name: searchTitle
+            label: "Recherche Google, titre"
+            type: string
+            required: true
+          - name: searchText
+            label: "Recherche Google, texte"
+            type: text
+            required: true
+          - name: socialTitle
+            label: "Facebook et Instagram, titre"
+            type: string
+            required: true
+          - name: socialText
+            label: "Facebook et Instagram, texte"
+            type: text
+            required: true
+          - name: trackTitle
+            label: "Suivi des ventes, titre"
+            type: string
+            required: true
+          - name: trackText
+            label: "Suivi des ventes, texte"
+            type: text
+            required: true
+          - name: scope
+            label: "Phrase sous les services"
+            type: text
+            required: true
+      - name: results
+        label: "Résultats"
+        type: object
+        fields:
+          - name: label
+            label: "Petite étiquette (client et période)"
+            type: string
+            required: true
+          - name: title
+            label: "Titre de la section"
+            type: string
+            required: true
+          - name: num1
+            label: "Premier chiffre, en %"
+            type: number
+            required: true
+            description: "Le nombre seulement. Le + et le % s'ajoutent tout seuls."
+          - name: bib1
+            label: "Texte sous le premier chiffre"
+            type: text
+            required: true
+          - name: num2
+            label: "Deuxième chiffre, en %"
+            type: number
+            required: true
+            description: "Le nombre seulement."
+          - name: bib2
+            label: "Texte sous le deuxième chiffre"
+            type: text
+            required: true
+          - name: bib2Plain
+            label: "Le deuxième chiffre expliqué simplement"
+            type: text
+            required: true
+          - name: note
+            label: "Note sous les chiffres"
+            type: text
+            required: true
+          - name: quote
+            label: "Citation"
+            type: text
+            required: true
+            description: "Sans guillemets : ils s'ajoutent tout seuls."
+          - name: quoteName
+            label: "Citation, prénom et nom"
+            type: string
+            required: true
+          - name: quoteRole
+            label: "Citation, titre et entreprise"
+            type: string
+            required: true
+          - name: panelCta
+            label: "Phrase au-dessus du bouton"
+            type: string
+            required: true
+      - name: jargon
+        label: "Jargon (ROI, ROAS…)"
+        type: object
+        fields:
+          - name: title
+            label: "Titre de la section"
+            type: string
+            required: true
+          - name: intro
+            label: "Texte d'introduction"
+            type: text
+            required: true
+      - name: method
+        label: "Méthode"
+        type: object
+        fields:
+          - name: title
+            label: "Titre de la section"
+            type: string
+            required: true
+          - name: s1Title
+            label: "Étape 1, titre"
+            type: string
+            required: true
+          - name: s1Text
+            label: "Étape 1, texte"
+            type: text
+            required: true
+          - name: s2Title
+            label: "Étape 2, titre"
+            type: string
+            required: true
+          - name: s2Text
+            label: "Étape 2, texte"
+            type: text
+            required: true
+          - name: s3Title
+            label: "Étape 3, titre"
+            type: string
+            required: true
+          - name: s3Text
+            label: "Étape 3, texte"
+            type: text
+            required: true
+          - name: s4Title
+            label: "Étape 4, titre"
+            type: string
+            required: true
+          - name: s4Text
+            label: "Étape 4, texte"
+            type: text
+            required: true
+      - name: about
+        label: "À propos"
+        type: object
+        fields:
+          - name: title
+            label: "Titre de la section"
+            type: string
+            required: true
+          - name: r1Title
+            label: "Raison 1, titre"
+            type: string
+            required: true
+          - name: r1Text
+            label: "Raison 1, texte"
+            type: text
+            required: true
+          - name: r2Title
+            label: "Raison 2, titre"
+            type: string
+            required: true
+          - name: r2Text
+            label: "Raison 2, texte"
+            type: text
+            required: true
+          - name: r3Title
+            label: "Raison 3, titre"
+            type: string
+            required: true
+          - name: r3Text
+            label: "Raison 3, texte"
+            type: text
+            required: true
+          - name: fact1
+            label: "Expérience chez Primeau Vélo"
+            type: text
+            required: true
+          - name: fact2
+            label: "Formation"
+            type: text
+            required: true
+      - name: booking
+        label: "Réservation"
+        type: object
+        fields:
+          - name: title
+            label: "Titre de la section"
+            type: string
+            required: true
+          - name: lede
+            label: "Texte sous le titre"
+            type: text
+            required: true
+          - name: role
+            label: "Ligne sous ton nom"
+            type: string
+            required: true
+      - name: footer
+        label: "Pied de page"
+        type: object
+        fields:
+          - name: about
+            label: "Courte présentation"
+            type: text
+            required: true
+      - name: faq
+        label: "Questions fréquentes"
+        type: object
+        fields:
+          - name: title
+            label: "Titre de la section"
+            type: string
+            required: true
+          - name: intro
+            label: "Phrase avant ton courriel"
+            type: string
+            required: true
+          - name: items
+            label: "Questions"
+            type: object
+            list:
+              min: 1
+              collapsible:
+                collapsed: true
+                summary: "{q}"
+            fields:
+              - name: q
+                label: "Question"
+                type: string
+                required: true
+              - name: a
+                label: "Réponse"
+                type: text
+                required: true
+  - name: en
+    label: "Textes du site (anglais)"
+    type: file
+    path: src/content/en.json
+    format: json
+    fields:
+      - name: meta
+        label: "Référencement Google"
+        type: object
+        fields:
+          - name: title
+            label: "Titre dans Google"
+            type: string
+            required: true
+            description: "Le titre bleu affiché dans les résultats de recherche. Environ 60 caractères."
+          - name: description
+            label: "Description dans Google"
+            type: text
+            required: true
+            description: "Le texte gris sous le titre dans Google. Environ 155 caractères."
+      - name: hero
+        label: "Haut de page"
+        type: object
+        fields:
+          - name: role
+            label: "Ton titre professionnel"
+            type: string
+            required: true
+          - name: titleStart
+            label: "Grand titre, début"
+            type: string
+            required: true
+          - name: titleHl
+            label: "Grand titre, partie surlignée en bleu"
+            type: string
+            required: true
+          - name: titleEnd
+            label: "Grand titre, fin"
+            type: string
+            description: "Peut rester vide."
+          - name: lede
+            label: "Phrase sous le grand titre"
+            type: text
+            required: true
+      - name: cta
+        label: "Bouton principal"
+        type: object
+        fields:
+          - name: primary
+            label: "Texte du bouton de réservation"
+            type: string
+            required: true
+            description: "Repris partout sur la page."
+      - name: services
+        label: "Services"
+        type: object
+        fields:
+          - name: title
+            label: "Titre de la section"
+            type: string
+            required: true
+          - name: shoppingTitle
+            label: "Google Shopping, titre"
+            type: string
+            required: true
+          - name: shoppingText
+            label: "Google Shopping, texte"
+            type: text
+            required: true
+          - name: searchTitle
+            label: "Recherche Google, titre"
+            type: string
+            required: true
+          - name: searchText
+            label: "Recherche Google, texte"
+            type: text
+            required: true
+          - name: socialTitle
+            label: "Facebook et Instagram, titre"
+            type: string
+            required: true
+          - name: socialText
+            label: "Facebook et Instagram, texte"
+            type: text
+            required: true
+          - name: trackTitle
+            label: "Suivi des ventes, titre"
+            type: string
+            required: true
+          - name: trackText
+            label: "Suivi des ventes, texte"
+            type: text
+            required: true
+          - name: scope
+            label: "Phrase sous les services"
+            type: text
+            required: true
+      - name: results
+        label: "Résultats"
+        type: object
+        fields:
+          - name: label
+            label: "Petite étiquette (client et période)"
+            type: string
+            required: true
+          - name: title
+            label: "Titre de la section"
+            type: string
+            required: true
+          - name: num1
+            label: "Premier chiffre, en %"
+            type: number
+            required: true
+            description: "Le nombre seulement. Le + et le % s'ajoutent tout seuls."
+          - name: bib1
+            label: "Texte sous le premier chiffre"
+            type: text
+            required: true
+          - name: num2
+            label: "Deuxième chiffre, en %"
+            type: number
+            required: true
+            description: "Le nombre seulement."
+          - name: bib2
+            label: "Texte sous le deuxième chiffre"
+            type: text
+            required: true
+          - name: bib2Plain
+            label: "Le deuxième chiffre expliqué simplement"
+            type: text
+            required: true
+          - name: note
+            label: "Note sous les chiffres"
+            type: text
+            required: true
+          - name: quote
+            label: "Citation"
+            type: text
+            required: true
+            description: "Sans guillemets : ils s'ajoutent tout seuls."
+          - name: quoteName
+            label: "Citation, prénom et nom"
+            type: string
+            required: true
+          - name: quoteRole
+            label: "Citation, titre et entreprise"
+            type: string
+            required: true
+          - name: panelCta
+            label: "Phrase au-dessus du bouton"
+            type: string
+            required: true
+      - name: jargon
+        label: "Jargon (ROI, ROAS…)"
+        type: object
+        fields:
+          - name: title
+            label: "Titre de la section"
+            type: string
+            required: true
+          - name: intro
+            label: "Texte d'introduction"
+            type: text
+            required: true
+      - name: method
+        label: "Méthode"
+        type: object
+        fields:
+          - name: title
+            label: "Titre de la section"
+            type: string
+            required: true
+          - name: s1Title
+            label: "Étape 1, titre"
+            type: string
+            required: true
+          - name: s1Text
+            label: "Étape 1, texte"
+            type: text
+            required: true
+          - name: s2Title
+            label: "Étape 2, titre"
+            type: string
+            required: true
+          - name: s2Text
+            label: "Étape 2, texte"
+            type: text
+            required: true
+          - name: s3Title
+            label: "Étape 3, titre"
+            type: string
+            required: true
+          - name: s3Text
+            label: "Étape 3, texte"
+            type: text
+            required: true
+          - name: s4Title
+            label: "Étape 4, titre"
+            type: string
+            required: true
+          - name: s4Text
+            label: "Étape 4, texte"
+            type: text
+            required: true
+      - name: about
+        label: "À propos"
+        type: object
+        fields:
+          - name: title
+            label: "Titre de la section"
+            type: string
+            required: true
+          - name: r1Title
+            label: "Raison 1, titre"
+            type: string
+            required: true
+          - name: r1Text
+            label: "Raison 1, texte"
+            type: text
+            required: true
+          - name: r2Title
+            label: "Raison 2, titre"
+            type: string
+            required: true
+          - name: r2Text
+            label: "Raison 2, texte"
+            type: text
+            required: true
+          - name: r3Title
+            label: "Raison 3, titre"
+            type: string
+            required: true
+          - name: r3Text
+            label: "Raison 3, texte"
+            type: text
+            required: true
+          - name: fact1
+            label: "Expérience chez Primeau Vélo"
+            type: text
+            required: true
+          - name: fact2
+            label: "Formation"
+            type: text
+            required: true
+      - name: booking
+        label: "Réservation"
+        type: object
+        fields:
+          - name: title
+            label: "Titre de la section"
+            type: string
+            required: true
+          - name: lede
+            label: "Texte sous le titre"
+            type: text
+            required: true
+          - name: role
+            label: "Ligne sous ton nom"
+            type: string
+            required: true
+      - name: footer
+        label: "Pied de page"
+        type: object
+        fields:
+          - name: about
+            label: "Courte présentation"
+            type: text
+            required: true
+      - name: faq
+        label: "Questions fréquentes"
+        type: object
+        fields:
+          - name: title
+            label: "Titre de la section"
+            type: string
+            required: true
+          - name: intro
+            label: "Phrase avant ton courriel"
+            type: string
+            required: true
+          - name: items
+            label: "Questions"
+            type: object
+            list:
+              min: 1
+              collapsible:
+                collapsed: true
+                summary: "{q}"
+            fields:
+              - name: q
+                label: "Question"
+                type: string
+                required: true
+              - name: a
+                label: "Réponse"
+                type: text
+                required: true
