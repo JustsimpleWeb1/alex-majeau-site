@@ -1,22 +1,23 @@
 ---
 import type { Dict } from '../i18n';
-interface Props { t: Dict; alt: string; }
-const { t, alt } = Astro.props;
+// home : adresse de l'accueil sur les autres pages, pour que les ancres y mènent (vide sur l'accueil).
+interface Props { t: Dict; alt: string; home?: string; }
+const { t, alt, home = '' } = Astro.props;
 ---
 <header class="site" id="header">
   <div class="wrap nav">
-    <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true"></span>Alexandre Majeau</a>
+    <a class="logo" href={`${home}#top`}><span class="logo-mark" aria-hidden="true"></span>Alexandre Majeau</a>
     <nav aria-label={t.nav.mainLabel}>
       <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#resultats">{t.nav.results}</a></li>
-        <li><a href="#methode">{t.nav.process}</a></li>
-        <li><a href="#apropos">{t.nav.about}</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><a href={`${home}#services`}>Services</a></li>
+        <li><a href={`${home}#resultats`}>{t.nav.results}</a></li>
+        <li><a href={`${home}#methode`}>{t.nav.process}</a></li>
+        <li><a href={`${home}#apropos`}>{t.nav.about}</a></li>
+        <li><a href={`${home}#faq`}>FAQ</a></li>
         <li class="lang-li"><a class="lang" href={alt} hreflang={t.lang.code} lang={t.lang.code} aria-label={t.lang.label}>{t.lang.short}</a></li>
       </ul>
     </nav>
-    <a class="btn btn-line btn-sm nav-cta" href="#contact"><Fragment set:html={t.nav.cta} /></a>
+    <a class="btn btn-line btn-sm nav-cta" href={`${home}#contact`}><Fragment set:html={t.nav.cta} /></a>
     <button class="menu-btn" id="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mnav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
   </div>
 </header>

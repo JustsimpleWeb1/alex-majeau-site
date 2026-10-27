@@ -30,6 +30,8 @@ En français, courte, pour Simon :
 - ce qui change, section par section;
 - confirmation que le français et l'anglais sont faits et que `npm run build` passe;
 - pour un changement visuel : la version gardée, et chaque ajout au système (variante, jeton, section, animation) avec la ligne ajoutée à `docs/design-system.md`;
+- pour une nouvelle page : la recherche visée, les deux adresses, le titre et la description Google;
+- pour du SEO technique : ce qui change, l'effet attendu et l'écart éventuel sur l'accueil;
 - ce qui demande Simon (photo, nouveau service), s'il y en a.
 
 ## Essais visuels
@@ -61,15 +63,34 @@ Presque tout se fait dans **`src/content/site.json`**, un seul fichier bilingue 
 | Ce que Google comprend de lui | `seo` : `serviceName`, `jobTitle`, `serviceDesc`, `area`, `catalog`, `svc1` à `svc4`, `knowsAbout` |
 | La description des photos | `seo.heroPhotoAlt`, `seo.aboutPhotoAlt` |
 | L'image de partage | Remplacer `public/images/og-image.jpg` (JPG, 1200 × 630) |
+| Une nouvelle page | Un fichier bilingue dans `src/content/pages/`, d'après `docs/pages/exemple-page.json` (voir « Nouvelles pages et SEO technique ») |
 
 Les étiquettes d'interface (formulaire, maquettes animées) sont dans `src/i18n/fr.ts` et `en.ts`, avec les mêmes clés dans les deux.
+
+## Nouvelles pages et SEO technique
+
+Permis, mais signalé : la pull request le dit clairement, et Simon décide sur l'aperçu.
+
+**Nouvelle page** (mode d'emploi : `docs/pages/LISEZ-MOI.md`)
+
+1. **Une intention de recherche par page.** Demander à Alex quelle recherche la page vise. Vérifier qu'aucune autre page, accueil compris, ne vise la même; sinon, proposer d'enrichir la page existante.
+2. **Français et anglais**, avec un vrai texte dans chaque langue. Adresses courtes en minuscules et tirets, l'anglaise sous `/en/`.
+3. Titre Google de 60 caractères au maximum, description de 155 au maximum, un seul grand titre, au moins deux blocs utiles.
+4. Le reste se fait tout seul : liens entre les langues (`hreflang`), adresse canonique, données Google (`WebPage`, `FAQPage`), plan du site, lien dans le pied de page. Ne rien écrire à la main pour ça.
+5. Une pull request par nouvelle page.
+
+**SEO technique** : données Google de `src/layouts/Base.astro`, `astro.config.mjs`, redirections dans `netlify.toml`.
+
+- Les données Google se remplissent toujours à partir de `site.json` ou du fichier de la page : jamais de texte écrit dans `Base.astro`.
+- Ne pas changer le rendu ni les données de l'accueil sans le dire. Comparer le HTML construit avant et après (`dist/index.html`, `dist/en/index.html`) et décrire l'écart dans la pull request.
+- Une redirection (ancienne adresse vers nouvelle) va dans `netlify.toml`, en 301, et se signale.
+- Une pull request séparée des textes, avec l'effet attendu sur Google.
 
 ## À ne pas toucher sans Simon
 
 - Un nouveau service (chaque service a un visuel dessiné sur mesure), les photos, la police : préparer le travail si Alex le demande, et le signaler dans la pull request.
-- `indexable` dans `src/site.config.ts` : il reste à `false` jusqu'au lancement officiel, décidé avec Simon.
-- `netlify.toml`, `astro.config.mjs`, `package.json` et les dépendances.
-- Le JSON-LD de `src/layouts/Base.astro` : il se remplit à partir de `site.json`, ne pas y écrire de texte.
+- `indexable` dans `src/site.config.ts` et `src/pages/robots.txt.ts` : le site reste invisible pour Google jusqu'au lancement officiel, décidé avec Simon.
+- `package.json`, les dépendances et les réglages de build de `netlify.toml`.
 
 ## Règles de contenu et de design
 

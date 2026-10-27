@@ -54,6 +54,7 @@ Envoie autant de demandes que tu veux : une par idée, c'est parfait. Les demand
 - Les questions fréquentes : en ajouter, en retirer, changer l'ordre.
 - Les étapes de la méthode et les raisons « Pourquoi travailler avec moi » : en ajouter ou en retirer.
 - Tout ton référencement (voir plus bas).
+- De nouvelles pages (voir « Ajouter une page »).
 
 Le design suit tout seul : l'outil utilise les couleurs, la police et les blocs du site.
 
@@ -75,6 +76,17 @@ Ce que tu peux faire :
 - **Librement** : changer l'ordre des sections, présenter un bloc autrement (en cartes, en liste), mettre autre chose en avant, jouer avec les espacements et les fonds déjà prévus.
 - **En le signalant** : une nouvelle couleur, une nouvelle variante d'un bloc, une nouvelle section ou une animation. C'est permis : ton outil l'ajoute au design system et le dit à Simon dans ta demande.
 - **Jamais** : ce que le design system interdit, comme une barre de couleur à gauche des citations, une barre de progression ou des numéros décoratifs (01, 02…). Ton outil le sait.
+
+## Ajouter une page
+
+Ton site peut grandir au-delà d'une page : une page par service, par type de boutique ou par question que tes clients se posent. C'est ce qui aide le plus à sortir dans Google sur des recherches précises.
+
+- **Une page = une recherche.** Par exemple « Google Ads pour boutique de vélo ». Deux pages sur le même sujet se nuisent : ton outil vérifie avant d'en créer une.
+- **En français et en anglais**, toujours.
+- **Le reste se fait tout seul** : le lien entre les deux langues, ce que Google lit, le plan du site et un lien dans le bas de ta page d'accueil.
+- **Une demande par page.** Ton outil le signale à Simon, qui décide sur l'aperçu.
+
+Ton outil peut aussi faire du référencement plus technique (données lues par Google, redirections). C'est permis, il le signale à Simon dans ta demande.
 
 ## Ton référencement
 
@@ -117,6 +129,12 @@ Remplace ce qui est entre crochets.
 > Ajoute [nom de l'outil] à mes compétences pour Google.
 
 > Voici ma nouvelle image de partage [joins le fichier]. Mets-la au bon format et remplace l'ancienne.
+
+**Pages**
+
+> Je veux une page qui vise la recherche « [Google Ads pour boutique de vélo] ». Vérifie qu'aucune page ne vise déjà cette recherche, propose-moi un plan de la page en français et en anglais, puis crée-la et montre-moi le rendu.
+
+> Quelles pages pourrais-je ajouter pour attirer des [boutiques de sport en ligne] dans Google? Propose-moi cinq idées, une recherche par page, sans rien créer.
 
 **Visuel**
 

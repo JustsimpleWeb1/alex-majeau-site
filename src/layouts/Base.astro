@@ -3,16 +3,29 @@ import '../styles/global.css';
 import { type Lang, dictionaries, paths } from '../i18n';
 import { site } from '../site.config';
 
-interface Props { lang: Lang }
-const { lang } = Astro.props;
+// Page autre que l'accueil : ses deux adresses, son titre et sa description Google, sa FAQ éventuelle.
+export interface PageSeo {
+  paths: Record<Lang, string>;
+  title: string;
+  description: string;
+  faq?: { q: string; a: string }[];
+}
+interface Props { lang: Lang; page?: PageSeo }
+const { lang, page } = Astro.props;
 const t = dictionaries[lang];
 const base = Astro.site!;
 const url = (p: string) => new URL(p, base).href;
-const canonical = url(paths[lang]);
+const pagePaths = page ? page.paths : paths;
+const title = page ? page.title : t.seo.title;
+const description = page ? page.description : t.seo.description;
+const faq = page ? page.faq ?? [] : t.faq.items;
+const canonical = url(pagePaths[lang]);
+const langHome = url(paths[lang]);
 const ogImage = url(t.seo.image);
 const home = url('/');
 
 // Données structurées (Person, ProfessionalService, WebSite, WebPage, FAQPage).
+// Le service et le site sont ancrés sur l'accueil de la langue; chaque page a son propre WebPage.
 const svcAnchors = ['etape-social', 'etape-recherche', 'etape-shopping', 'etape-suivi'];
 const svcNames = [t.seo.svc1, t.seo.svc2, t.seo.svc3, t.seo.svc4];
 const jsonld = {
@@ -25,21 +38,24 @@ const jsonld = {
       knowsLanguage: ['fr-CA', 'en-CA'], knowsAbout: t.seo.knowsAbout, sameAs: [site.linkedin],
     },
     {
-      '@type': 'ProfessionalService', '@id': `${canonical}#service`, name: t.seo.serviceName, description: t.seo.serviceDesc,
-      url: canonical, founder: { '@id': `${home}#alexandre` },
+      '@type': 'ProfessionalService', '@id': `${langHome}#service`, name: t.seo.serviceName, description: t.seo.serviceDesc,
+      url: langHome, founder: { '@id': `${home}#alexandre` },
       address: { '@type': 'PostalAddress', addressLocality: 'Blainville', addressRegion: 'QC', addressCountry: 'CA' },
       areaServed: { '@type': 'AdministrativeArea', name: t.seo.area }, availableLanguage: ['fr', 'en'],
       hasOfferCatalog: {
         '@type': 'OfferCatalog', name: t.seo.catalog,
-        itemListElement: svcNames.map((name, i) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name, url: `${canonical}#${svcAnchors[i]}` } })),
+        itemListElement: svcNames.map((name, i) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name, url: `${langHome}#${svcAnchors[i]}` } })),
       },
     },
-    { '@type': 'WebSite', '@id': `${canonical}#site`, url: canonical, name: 'Alexandre Majeau', inLanguage: t.meta.lang, publisher: { '@id': `${home}#alexandre` } },
-    { '@type': 'WebPage', '@id': `${canonical}#page`, url: canonical, isPartOf: { '@id': `${canonical}#site` }, about: { '@id': `${canonical}#service` }, inLanguage: t.meta.lang, name: t.seo.title },
+    { '@type': 'WebSite', '@id': `${langHome}#site`, url: langHome, name: 'Alexandre Majeau', inLanguage: t.meta.lang, publisher: { '@id': `${home}#alexandre` } },
     {
-      '@type': 'FAQPage', '@id': `${canonical}#faq`,
-      mainEntity: t.faq.items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+      '@type': 'WebPage', '@id': `${canonical}#page`, url: canonical, isPartOf: { '@id': `${langHome}#site` }, about: { '@id': `${langHome}#service` }, inLanguage: t.meta.lang, name: title,
+      ...(page ? { description } : {}),
     },
+    ...(faq.length ? [{
+      '@type': 'FAQPage', '@id': `${canonical}#faq`,
+      mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+    }] : []),
   ],
 };
 ---
@@ -48,21 +64,21 @@ const jsonld = {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{t.seo.title}</title>
-<meta name="description" content={t.seo.description}>
+<title>{title}</title>
+<meta name="description" content={description}>
 <meta name="robots" content={site.indexable ? 'index, follow' : 'noindex, nofollow'}>
 <link rel="canonical" href={canonical}>
-<link rel="alternate" hreflang="fr-CA" href={url(paths.fr)}>
-<link rel="alternate" hreflang="en-CA" href={url(paths.en)}>
-<link rel="alternate" hreflang="x-default" href={url(paths.fr)}>
+<link rel="alternate" hreflang="fr-CA" href={url(pagePaths.fr)}>
+<link rel="alternate" hreflang="en-CA" href={url(pagePaths.en)}>
+<link rel="alternate" hreflang="x-default" href={url(pagePaths.fr)}>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="theme-color" content="#101311">
 <meta property="og:type" content="website">
 <meta property="og:locale" content={t.meta.ogLocale}>
 <meta property="og:locale:alternate" content={t.meta.ogLocaleAlt}>
 <meta property="og:site_name" content="Alexandre Majeau">
-<meta property="og:title" content={t.seo.title}>
-<meta property="og:description" content={t.seo.description}>
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
 <meta property="og:url" content={canonical}>
 <meta property="og:image" content={ogImage}>
 <meta property="og:image:width" content="1200">

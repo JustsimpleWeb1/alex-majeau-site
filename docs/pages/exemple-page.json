@@ -1,0 +1,31 @@
+{
+  "path_fr": "/google-ads-boutiques-velo/",
+  "path_en": "/en/google-ads-bike-shops/",
+  "menu_fr": "Google Ads pour boutiques de vélo",
+  "menu_en": "Google Ads for bike shops",
+  "title_fr": "Google Ads pour boutiques de vélo | Alexandre Majeau",
+  "title_en": "Google Ads for Bike Shops | Alexandre Majeau",
+  "description_fr": "Des campagnes Google Ads et Shopping pensées pour les boutiques de vélo en ligne : plus de ventes avec le même budget. Appel gratuit de 30 minutes.",
+  "description_en": "Google Ads and Shopping campaigns built for online bike shops: more sales from the same budget. Free 30-minute call.",
+  "label_fr": "Google Ads · boutiques de vélo",
+  "label_en": "Google Ads · bike shops",
+  "h1_fr": "Google Ads pour les boutiques de vélo en ligne",
+  "h1_en": "Google Ads for online bike shops",
+  "lede_fr": "Vos vélos et vos pièces devant les cyclistes qui cherchent déjà à acheter.",
+  "lede_en": "Your bikes and parts in front of riders who are already looking to buy.",
+  "blocks": [
+    {
+      "title_fr": "Ce que je fais pour votre boutique",
+      "title_en": "What I do for your store",
+      "text_fr": "Premier paragraphe.\n\nDeuxième paragraphe.",
+      "text_en": "First paragraph.\n\nSecond paragraph.",
+      "points": [
+        { "fr": "Un point clé", "en": "A key point" },
+        { "fr": "Un autre point", "en": "Another point" }
+      ]
+    }
+  ],
+  "faq": [
+    { "q_fr": "Une question?", "q_en": "A question?", "a_fr": "La réponse.", "a_en": "The answer." }
+  ]
+}

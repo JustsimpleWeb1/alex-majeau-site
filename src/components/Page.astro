@@ -1,0 +1,59 @@
+---
+// Page ajoutée : se construit à partir d'un fichier bilingue de src/content/pages/ (voir docs/pages/LISEZ-MOI.md).
+import Base from '../layouts/Base.astro';
+import Sprite from './Sprite.astro';
+import Header from './Header.astro';
+import MobileMenu from './MobileMenu.astro';
+import Faq from './Faq.astro';
+import Booking from './Booking.astro';
+import Footer from './Footer.astro';
+import { type Lang, dictionaries, paths, otherLang, pick } from '../i18n';
+
+interface PageData {
+  title: string;
+  description: string;
+  label?: string;
+  h1: string;
+  lede: string;
+  blocks: { title: string; text: string; points?: string[] }[];
+  faq?: { q: string; a: string }[];
+}
+interface Props { lang: Lang; raw: Record<string, unknown> }
+const { lang, raw } = Astro.props;
+const t = dictionaries[lang];
+const p = pick(raw, lang) as PageData;
+const pagePaths = { fr: raw.path_fr as string, en: raw.path_en as string };
+const alt = pagePaths[otherLang(lang)];
+const home = paths[lang];
+---
+<Base lang={lang} page={{ paths: pagePaths, title: p.title, description: p.description, faq: p.faq }}>
+  <Sprite />
+  <Header t={t} alt={alt} home={home} />
+  <MobileMenu t={t} alt={alt} home={home} />
+  <main id="main">
+    <section class="page-intro" aria-labelledby="page-titre">
+      <div class="wrap">
+        {p.label && <span class="label">{p.label}</span>}
+        <h1 id="page-titre" class="display">{p.h1}</h1>
+        <p class="lede">{p.lede}</p>
+        <a class="btn btn-hi" href="#contact">{t.cta.primary} <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+      </div>
+    </section>
+    {p.blocks.map((block, i) => (
+      <section class="page-block" aria-labelledby={`bloc-${i + 1}`}>
+        <div class="wrap">
+          <div class="page-prose" data-reveal>
+            <h2 id={`bloc-${i + 1}`}>{block.title}</h2>
+            {block.text.split(/\n\s*\n/).map((para) => <p>{para}</p>)}
+            {block.points && block.points.length > 0 && (
+              <ul class="reasons">{block.points.map((point) => <li><div><p>{point}</p></div></li>)}</ul>
+            )}
+          </div>
+        </div>
+      </section>
+    ))}
+    {p.faq && p.faq.length > 0 && <Faq t={t} items={p.faq} />}
+    <Booking t={t} />
+  </main>
+  <Footer t={t} alt={alt} home={home} />
+</Base>

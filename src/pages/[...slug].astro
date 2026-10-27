@@ -1,0 +1,23 @@
+---
+// Pages ajoutées : un fichier JSON bilingue par page dans src/content/pages/ crée la page en français et en anglais.
+import Page from '../components/Page.astro';
+import type { Lang } from '../i18n';
+
+export function getStaticPaths() {
+  const files = import.meta.glob<Record<string, unknown>>('../content/pages/*.json', { eager: true, import: 'default' });
+  return Object.entries(files).flatMap(([file, raw]) => {
+    const fr = String(raw.path_fr ?? ''), en = String(raw.path_en ?? '');
+    // Garde-fous : adresses en minuscules avec tirets, l'anglaise sous /en/, toutes deux finies par /.
+    const ok = (p: string) => /^\/(en\/)?[a-z0-9]+(-[a-z0-9]+)*\/$/.test(p);
+    if (!ok(fr) || fr.startsWith('/en/') || !ok(en) || !en.startsWith('/en/')) {
+      throw new Error(`${file} : path_fr doit ressembler à /mon-sujet/ et path_en à /en/my-topic/`);
+    }
+    return (['fr', 'en'] as Lang[]).map((lang) => ({
+      params: { slug: (lang === 'fr' ? fr : en).slice(1, -1) },
+      props: { lang, raw },
+    }));
+  });
+}
+const { lang, raw } = Astro.props;
+---
+<Page lang={lang} raw={raw} />
