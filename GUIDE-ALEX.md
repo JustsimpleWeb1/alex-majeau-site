@@ -3,15 +3,24 @@
 Ton site vit à deux endroits :
 
 - **GitHub** garde le code et les textes : https://github.com/JustsimpleWeb1/alex-majeau-site
-- **Netlify** l'héberge : https://alexandre-majeau.netlify.app/
+- **Netlify** l'héberge. Il y a deux adresses :
+  - **ton vrai site** : https://alexandre-majeau.netlify.app/
+  - **la prochaine version**, avec les changements acceptés mais pas encore publiés : https://preparation--alexandre-majeau.netlify.app/
 
 ## Comment ça marche
 
-1. **Tu travailles sur ton ordi**, avec Claude ou avec Codex. Tu vois le site changer en direct pendant que tu ajustes tes textes.
-2. **Quand c'est bon pour toi**, tu demandes à l'outil d'envoyer ton travail à Simon. Il crée une demande de mise en ligne sur GitHub, qu'on appelle une pull request.
-3. **Simon reçoit un courriel.** Il regarde un aperçu de ton travail, corrige au besoin, puis met le site en ligne.
+1. **Tu modifies sur ton ordi**, avec Claude ou avec Codex. Tu vois le site changer en direct. Rien n'est en ligne.
+2. **Tu envoies à Simon.** Une phrase suffit : ton outil crée une demande sur GitHub, qu'on appelle une pull request, avec un aperçu de tes changements.
+3. **Simon accepte.** Il reçoit un courriel, regarde l'aperçu, ajuste au besoin, puis ajoute tes changements à la prochaine version.
+4. **Simon publie quand c'est prêt.** La prochaine version devient ton vrai site. Plusieurs changements partent ensemble.
 
-Tu ne peux pas briser le vrai site : GitHub refuse toute modification qui ne passe pas par Simon. Essaie autant que tu veux.
+Tu ne peux pas briser ton site : GitHub refuse toute modification qui ne passe pas par Simon. Essaie autant que tu veux, les aperçus ne coûtent rien.
+
+**Trois mots à connaître**
+
+- **Branche** : ta copie de travail. Ton site ne bouge pas pendant que tu travailles dessus.
+- **Pull request** : ta demande à Simon.
+- **Aperçu** : une adresse où voir ton site avec tes changements, même sur ton téléphone.
 
 ## Une seule fois : t'installer
 
@@ -26,7 +35,7 @@ Les deux outils lisent les règles du site tout seuls (le fichier `AGENTS.md` et
 
 ## À chaque modification
 
-1. Ouvre ton outil sur le dossier `alex-majeau-site`.
+1. Ouvre ton outil sur le dossier `alex-majeau-site`. Il récupère tout seul la prochaine version.
 2. Écris ce que tu veux changer, en français, comme à une personne. Tu peux copier une des demandes plus bas.
 3. Demande-lui de te montrer le rendu. Ajuste autant que tu veux.
 4. Quand c'est bon, écris :
@@ -35,7 +44,9 @@ Les deux outils lisent les règles du site tout seuls (le fichier `AGENTS.md` et
 
 C'est tout. L'outil te donne le lien de la pull request. Netlify y ajoute un lien d'**aperçu** (Deploy Preview), que tu peux aussi ouvrir sur ton téléphone.
 
-Un petit truc : regroupe tes changements dans une seule pull request. Chaque mise en ligne coûte un peu à l'hébergement, alors une demande avec cinq changements vaut mieux que cinq demandes.
+Quand Simon accepte, tes changements apparaissent dans la prochaine version. Ils seront sur ton vrai site à sa prochaine publication.
+
+Envoie autant de demandes que tu veux : une par idée, c'est parfait. Les demandes et les aperçus ne coûtent rien. C'est la publication du vrai site qui coûte un peu à l'hébergement, alors Simon regroupe plusieurs changements avant de publier.
 
 ## Ce que tu peux changer seul
 
@@ -109,7 +120,8 @@ Choisis le dépôt `alex-majeau-site`, écris ta demande en terminant par « pui
 
 ## Si quelque chose ne va pas
 
-- **L'outil dit qu'il ne peut pas pousser sur `main`** : c'est normal. Dis-lui de créer une branche et d'ouvrir une pull request.
+- **L'outil dit qu'il ne peut pas pousser sur `main` ou `preparation`** : c'est normal, c'est la protection. Dis-lui de créer une branche et d'ouvrir une pull request.
+- **Ton changement n'est pas sur ton vrai site** : c'est normal tant que Simon n'a pas publié. S'il a accepté ta demande, tu le vois déjà dans la prochaine version.
 - **L'aperçu Netlify affiche une erreur** : demande à l'outil « Lance `npm run build` et corrige l'erreur », puis renvoie. Si ça bloque encore, écris à Simon.
 - **Tu veux tout recommencer** : demande « Annule mes changements et repars de la dernière version du site ».
 - **Une question sur le vrai site** (domaine, mise en ligne, Netlify) : écris à Simon.

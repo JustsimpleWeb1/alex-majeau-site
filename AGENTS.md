@@ -1,30 +1,66 @@
-# Site d'Alexandre Majeau : règles pour l'agent (Claude, Codex ou autre)
+# Site d'Alexandre Majeau : brief pour l'agent (Claude, Codex ou autre)
 
-Site d'une page, bilingue (français à `/`, anglais à `/en/`), en Astro statique. Hébergé sur Netlify : chaque pull request reçoit un aperçu, et la branche `main` est le vrai site.
+Site d'une page, bilingue (français à `/`, anglais à `/en/`), en Astro statique, hébergé sur Netlify.
+Tu travailles avec **Alex**, le propriétaire du site. Il n'est pas développeur : parle-lui en français simple, sans jargon, et montre-lui le rendu plutôt que le code.
 
-## Le circuit de travail
+## Les deux branches protégées
 
-1. Commencer depuis la dernière version de `main` (`git pull`), puis créer une branche au nom clair (`alex/faq-delais`, `alex/seo-titre`).
-2. Faire les changements, lancer `npm run dev` et montrer le rendu (http://localhost:4321 et `/en/`) sur ordinateur et sur téléphone.
-3. Lancer `npm run build` : il doit passer sans erreur.
-4. Faire le commit, pousser la branche et ouvrir une pull request vers `main` avec un résumé clair des changements, en français.
-5. **Ne jamais pousser sur `main` et ne jamais fusionner une pull request.** C'est Simon (Just Simple Web) qui vérifie l'aperçu et met en ligne. GitHub bloque `main` de toute façon.
+- `preparation` : **la prochaine version** (branche par défaut). Tout travail part d'ici et revient ici par pull request. Aperçu : https://preparation--alexandre-majeau.netlify.app/
+- `main` : **le vrai site**, https://alexandre-majeau.netlify.app/. Seul Simon (Just Simple Web) y publie, en regroupant plusieurs changements. Chaque publication coûte des crédits Netlify.
 
-## Où sont les choses
+Personne d'autre que Simon ne peut pousser ou fusionner sur ces deux branches : GitHub le bloque.
 
-- `src/content/site.json` : tout le contenu modifiable et le référencement. Un seul fichier bilingue : chaque texte a une clé `nom_fr` et une clé `nom_en`. `src/i18n/index.ts` choisit la langue.
-- `src/i18n/fr.ts` et `en.ts` : textes d'interface (étiquettes, maquettes animées, formulaire), mêmes clés dans les deux.
-- `src/components/` : une section par fichier, dans l'ordre de `Home.astro`. `src/layouts/Base.astro` : balises `<head>`, hreflang, JSON-LD.
-- `src/styles/site.css` : jetons et styles. `src/scripts/site.js` : interactions.
-- `src/site.config.ts` : courriel, LinkedIn et indexation.
-- `docs/design-system.md` : **le design system. Le lire avant tout changement visuel ou toute nouvelle section.**
+## Le circuit, à chaque demande d'Alex
 
-## Règles
+1. **Partir de la prochaine version** : `git checkout preparation && git pull`, puis créer une branche au nom clair (`alex/faq-delais`, `alex/seo-titre`). Si Alex a une branche en cours non envoyée, lui demander s'il continue dessus.
+2. **Faire le changement** selon la carte plus bas. Quand la demande dit « propose », proposer d'abord et attendre son choix.
+3. **Montrer le rendu** : `npm run dev`, puis http://localhost:4321 et `/en/`, sur ordinateur et en largeur de téléphone. Laisser Alex ajuster autant qu'il veut.
+4. **Vérifier** : `npm run build` doit passer sans erreur.
+5. **Envoyer à Simon** quand Alex le demande (« Pousse ma branche et ouvre une pull request pour Simon ») :
+   - commit avec un message clair en français;
+   - pousser la branche;
+   - ouvrir une pull request **vers `preparation`**, jamais vers `main` (`gh pr create --base preparation`);
+   - donner le lien à Alex et lui dire que l'aperçu Netlify apparaît dans la pull request après environ une minute.
+6. **Ne jamais** pousser ni fusionner sur `preparation` ou `main`, ni ouvrir de pull request vers `main`. Si Alex demande de publier, lui expliquer que c'est Simon qui publie, et qu'il voit déjà ses changements acceptés sur l'aperçu de la prochaine version.
 
-- **Contenu d'abord.** Un changement de texte, de FAQ, d'étape ou de référencement se fait dans `site.json`, jamais dans un composant.
-- **Toujours le français ET l'anglais** : les deux clés `_fr` et `_en`, et les mêmes clés dans `fr.ts`/`en.ts`.
-- **Design system** : seulement les jetons et les composants de `docs/design-system.md`. Aucune nouvelle couleur, police, taille ou rayon, aucun code couleur en dur. Si un besoin sort du système, le dire dans la pull request au lieu d'inventer.
-- **Référencement** : titre Google de 60 caractères au maximum, description de 155 au maximum, image de partage de 1200 × 630 en JPG dans `public/images/`. Le JSON-LD de `Base.astro` se remplit à partir de `site.json` (section `seo` et FAQ) : ne pas y écrire de texte en dur.
-- Ne pas passer `indexable` à `true` dans `site.config.ts` : c'est le lancement officiel, décidé avec Simon.
-- Interdits de design : bordure d'accent à gauche, barre de progression, numérotation décorative (01, 02…).
+### Description de la pull request
+
+En français, courte, pour Simon :
+
+- ce qui change, section par section;
+- confirmation que le français et l'anglais sont faits et que `npm run build` passe;
+- ce qui sort du design system ou demande Simon (photo, nouveau service, nouvelle section), s'il y en a.
+
+## Carte des changements
+
+Presque tout se fait dans **`src/content/site.json`**, un seul fichier bilingue : chaque texte a une clé `nom_fr` et une clé `nom_en`. Toujours remplir les deux.
+
+| Alex veut changer | Où |
+|---|---|
+| Un texte de la page | La section correspondante de `site.json` : `hero`, `services`, `results`, `jargon`, `method`, `about`, `booking`, `footer`, `faq` |
+| Le bouton principal | `cta.primary` |
+| Une question fréquente (ajouter, retirer, réordonner) | `faq.items` |
+| Une étape de la méthode | `method.steps` (`when`, `title`, `text`) |
+| Une raison « Pourquoi travailler avec moi » | `about.reasons` (`title`, `text`) |
+| Un chiffre des résultats | `results.num1` / `num2` (nombre entier), avec `before` et `after` pour le format par langue (`+` et `%`, ou `10 $` en français et `$10` en anglais) |
+| La citation | `results.quote`, `quoteName`, `quoteRole` |
+| Le titre ou la description Google | `seo.title` (60 caractères au maximum), `seo.description` (155 au maximum) |
+| Ce que Google comprend de lui | `seo` : `serviceName`, `jobTitle`, `serviceDesc`, `area`, `catalog`, `svc1` à `svc4`, `knowsAbout` |
+| La description des photos | `seo.heroPhotoAlt`, `seo.aboutPhotoAlt` |
+| L'image de partage | Remplacer `public/images/og-image.jpg` (JPG, 1200 × 630) |
+
+Les étiquettes d'interface (formulaire, maquettes animées) sont dans `src/i18n/fr.ts` et `en.ts`, avec les mêmes clés dans les deux.
+
+## À ne pas toucher sans Simon
+
+- Le design : `src/styles/site.css`, `src/components/`, `src/scripts/`. Seulement les jetons et les composants de `docs/design-system.md`, à lire avant tout changement visuel. Aucune nouvelle couleur, police, taille ou rayon, aucun code couleur en dur.
+- Un nouveau service (chaque service a un visuel dessiné sur mesure), une nouvelle section, les photos : préparer le travail si Alex le demande, et le signaler dans la pull request.
+- `indexable` dans `src/site.config.ts` : il reste à `false` jusqu'au lancement officiel, décidé avec Simon.
+- `netlify.toml`, `astro.config.mjs`, `package.json` et les dépendances.
+- Le JSON-LD de `src/layouts/Base.astro` : il se remplit à partir de `site.json`, ne pas y écrire de texte.
+
+## Règles de contenu et de design
+
 - Textes : phrases courtes, bénéfice client d'abord, pas de tournure « X, pas Y », appels à l'action directs.
+- Chiffres : seulement des chiffres vérifiables. Si Alex en donne un nouveau, lui demander d'où il vient et le noter dans la pull request.
+- Interdits de design : bordure d'accent à gauche, barre de progression, numérotation décorative (01, 02…).

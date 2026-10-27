@@ -25,9 +25,24 @@ npm run preview    # sert dist/ en local
 
 ## Déploiement
 
-Netlify : `netlify.toml` est prêt (build `npm run build`, dossier `dist`, Node 22). Chaque pull request reçoit un aperçu; `main` est le vrai site.
-`main` est verrouillée par une règle GitHub (« main : Simon seulement ») : seul l'administrateur du dépôt peut la mettre à jour ou fusionner une pull request.
-Vercel fonctionne aussi tel quel (préréglage Astro, site statique).
+Netlify : `netlify.toml` est prêt (build `npm run build`, dossier `dist`, Node 22). Vercel fonctionne aussi tel quel (préréglage Astro, site statique).
+
+| Branche | Rôle | Adresse | Coût Netlify |
+|---|---|---|---|
+| `preparation` (par défaut) | Prochaine version : les changements acceptés | https://preparation--alexandre-majeau.netlify.app/ | Gratuit |
+| `main` | Vrai site | https://alexandre-majeau.netlify.app/ | 15 crédits par publication |
+| Pull request | Aperçu d'une demande | Lien « Deploy Preview » dans la pull request | Gratuit |
+
+Les deux branches sont verrouillées par la règle GitHub « main et preparation : Simon seulement » : seul l'administrateur du dépôt peut les mettre à jour ou y fusionner une pull request.
+
+## Marche à suivre pour Simon
+
+1. **Une demande d'Alex arrive** (courriel de GitHub). Elle vise `preparation`.
+2. **Regarder l'aperçu** : lien « Deploy Preview » dans la pull request. Pour corriger, pousser sur la branche d'Alex ou demander la correction dans un commentaire.
+3. **Accepter** : sur la pull request, cocher « Merge without waiting for requirements to be met (bypass rules) », puis **Merge pull request** et **Confirm merge**. Gratuit : la prochaine version se met à jour.
+4. **Publier quand c'est prêt** : ouvrir une pull request de `preparation` vers `main` (sur GitHub : *Pull requests → New → base `main`, compare `preparation`*), vérifier l'aperçu, puis fusionner de la même façon. C'est la seule étape qui coûte (15 crédits).
+
+Ne pas supprimer la branche `preparation` après la publication : elle sert à la suite.
 
 ## Avant le lancement officiel
 
