@@ -5,3 +5,7 @@ dist/
 .env.*
 .DS_Store
 .netlify/
+
+# Labo des essais visuels : reste sur l'ordi, jamais envoyé (voir docs/essais/LISEZ-MOI.md)
+src/essais/
+src/pages/essais/

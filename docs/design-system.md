@@ -7,7 +7,7 @@ Direction « Haute visibilité », accent azur (retenue le 2026-09-29). Le desig
 - **Le contenu** vit dans `src/content/site.json` : textes, FAQ, étapes, raisons, référencement. Chaque texte a une clé `_fr` et une clé `_en`.
 - **Le design** vit dans `src/styles/site.css` (jetons et styles) et `src/components/` (une section par fichier).
 - Changer, ajouter ou retirer du contenu ne demande **aucun** changement de design : la page se construit à partir de `site.json`.
-- Toute nouveauté visuelle réutilise les jetons et les composants ci-dessous. On n'en invente pas.
+- Toute nouveauté visuelle réutilise les jetons et les composants ci-dessous. Si un essai en demande un nouveau, il entre d'abord dans ce document (voir « Essais visuels »).
 
 ## Jetons
 
@@ -92,11 +92,30 @@ Inventorier ici avant de créer. Réutiliser par défaut. Un nouveau composant s
 - **Chiffres des résultats** : `num1`/`num2` (nombre entier, animé), avec `before` et `after` pour le format, par langue : `+` et `%` pour une hausse, `$` avant le nombre en anglais et après en français pour un montant.
 - **Tous les textes et le référencement** : modifier la valeur dans `site.json`, en français et en anglais.
 
-### Ce qui demande Simon
+## Essais visuels : trois niveaux de liberté
 
-- **Un nouveau service** : chaque carte de service a une petite maquette dessinée sur mesure (Shopping, recherche, publication, graphique). Un 5e service demande un nouveau visuel.
-- **Une nouvelle section**, une nouvelle couleur ou une nouvelle police.
-- **Les photos** : à fournir en JPG, au moins 1600 px de large.
+Alex peut essayer des changements visuels. Il compare ses versions dans le labo local (`docs/essais/LISEZ-MOI.md`), puis envoie celle qu'il garde, **une demande par idée visuelle**, séparée des changements de texte. Simon décide sur l'aperçu.
+
+**Libre**, à l'intérieur du système :
+
+- changer l'ordre des sections dans `Home.astro`, ou l'ordre des éléments d'une section;
+- remplacer un composant par un autre du registre (une liste en cartes, des cartes en liste);
+- choisir d'autres valeurs parmi les jetons existants : espacements `--s1` à `--s8`, tailles de texte du tableau, fond `--paper` ou `--paper-2`, panneau sombre ou clair;
+- changer quel élément est mis en avant (bouton principal, chiffre, citation).
+
+**Permis, mais signalé** : ce qui ajoute au système.
+
+- une nouvelle variante d'un composant, un nouveau jeton (couleur, taille, rayon), une nouvelle section, une nouvelle animation;
+- la même demande met `docs/design-system.md` à jour (jeton avec son contraste calculé, ou entrée au registre de composants);
+- la description de la demande le dit clairement, pour que Simon décide en connaissance de cause.
+
+**Interdit** : tout ce qui est dans « Interdits » plus bas.
+
+**Reste chez Simon** :
+
+- **un nouveau service** : chaque carte de service a une petite maquette dessinée sur mesure (Shopping, recherche, publication, graphique);
+- **les photos** : à fournir en JPG, au moins 1600 px de large;
+- **la police** : Archivo et IBM Plex Mono sont chargées pour tout le site.
 
 ## Ajouter une section
 

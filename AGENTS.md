@@ -13,7 +13,7 @@ Personne d'autre que Simon ne peut pousser ou fusionner sur ces deux branches : 
 ## Le circuit, à chaque demande d'Alex
 
 1. **Partir de la prochaine version** : `git checkout preparation && git pull`, puis créer une branche au nom clair (`alex/faq-delais`, `alex/seo-titre`). Si Alex a une branche en cours non envoyée, lui demander s'il continue dessus.
-2. **Faire le changement** selon la carte plus bas. Quand la demande dit « propose », proposer d'abord et attendre son choix.
+2. **Faire le changement** selon la carte plus bas, ou par le labo pour un changement visuel (section « Essais visuels »). Quand la demande dit « propose », proposer d'abord et attendre son choix.
 3. **Montrer le rendu** : `npm run dev`, puis http://localhost:4321 et `/en/`, sur ordinateur et en largeur de téléphone. Laisser Alex ajuster autant qu'il veut.
 4. **Vérifier** : `npm run build` doit passer sans erreur.
 5. **Envoyer à Simon** quand Alex le demande (« Pousse ma branche et ouvre une pull request pour Simon ») :
@@ -29,7 +29,20 @@ En français, courte, pour Simon :
 
 - ce qui change, section par section;
 - confirmation que le français et l'anglais sont faits et que `npm run build` passe;
-- ce qui sort du design system ou demande Simon (photo, nouveau service, nouvelle section), s'il y en a.
+- pour un changement visuel : la version gardée, et chaque ajout au système (variante, jeton, section, animation) avec la ligne ajoutée à `docs/design-system.md`;
+- ce qui demande Simon (photo, nouveau service), s'il y en a.
+
+## Essais visuels
+
+Quand Alex veut changer l'apparence (disposition, mise en avant, couleurs, espacements), lire `docs/design-system.md` puis suivre `docs/essais/LISEZ-MOI.md` :
+
+1. **Labo local** : monter deux ou trois versions dans `src/essais/` et `src/pages/essais/` (ignorés par git, jamais envoyés), à partir de `docs/essais/gabarit-version.astro`. Donner à Alex les adresses `http://localhost:4321/essais/...` et le laisser comparer, sur ordinateur et téléphone.
+2. **Version gardée** : la reporter dans le vrai composant et dans `src/styles/site.css`, avec les jetons. Vider le labo.
+3. **Trois niveaux** (détail dans le design system) :
+   - libre : réordonner, changer de composant du registre, choisir d'autres jetons existants, changer ce qui est mis en avant;
+   - permis mais signalé : nouvelle variante, nouveau jeton, nouvelle section, nouvelle animation. Mettre `docs/design-system.md` à jour **dans la même pull request** (jeton avec son contraste calculé, ou entrée au registre) et le dire dans la description;
+   - interdit : la liste « Interdits » du design system.
+4. **Une pull request par idée visuelle**, séparée des changements de texte, pour que Simon puisse accepter l'une et refuser l'autre. Branche `alex/visuel-...`.
 
 ## Carte des changements
 
@@ -53,8 +66,7 @@ Les étiquettes d'interface (formulaire, maquettes animées) sont dans `src/i18n
 
 ## À ne pas toucher sans Simon
 
-- Le design : `src/styles/site.css`, `src/components/`, `src/scripts/`. Seulement les jetons et les composants de `docs/design-system.md`, à lire avant tout changement visuel. Aucune nouvelle couleur, police, taille ou rayon, aucun code couleur en dur.
-- Un nouveau service (chaque service a un visuel dessiné sur mesure), une nouvelle section, les photos : préparer le travail si Alex le demande, et le signaler dans la pull request.
+- Un nouveau service (chaque service a un visuel dessiné sur mesure), les photos, la police : préparer le travail si Alex le demande, et le signaler dans la pull request.
 - `indexable` dans `src/site.config.ts` : il reste à `false` jusqu'au lancement officiel, décidé avec Simon.
 - `netlify.toml`, `astro.config.mjs`, `package.json` et les dépendances.
 - Le JSON-LD de `src/layouts/Base.astro` : il se remplit à partir de `site.json`, ne pas y écrire de texte.
@@ -63,4 +75,4 @@ Les étiquettes d'interface (formulaire, maquettes animées) sont dans `src/i18n
 
 - Textes : phrases courtes, bénéfice client d'abord, pas de tournure « X, pas Y », appels à l'action directs.
 - Chiffres : seulement des chiffres vérifiables. Si Alex en donne un nouveau, lui demander d'où il vient et le noter dans la pull request.
-- Interdits de design : bordure d'accent à gauche, barre de progression, numérotation décorative (01, 02…).
+- Interdits de design : bordure d'accent à gauche, barre de progression, numérotation décorative (01, 02…), code couleur écrit en dur, `style=""` dans le vrai site, texte azur sur fond clair.
