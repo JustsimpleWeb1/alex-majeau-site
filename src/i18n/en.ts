@@ -62,7 +62,6 @@ export const en: UiDict = {
     "trackLabel": "Sales tracking"
   },
   "results": {
-    "pct": "<small>%</small>",
     "quoteOpen": "“",
     "quoteClose": "”"
   },

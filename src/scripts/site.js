@@ -94,13 +94,13 @@
     entries.forEach(function (en) {
       if (!en.isIntersecting) return;
       co.unobserve(en.target);
-      var el = en.target, target = +el.dataset.count, small = el.querySelector("small").outerHTML;
+      var el = en.target, target = +el.dataset.count, before = el.dataset.before || "", unit = el.querySelector("small"), small = unit ? unit.outerHTML : "";
       if (reduce) return;
       var t0 = null, dur = 1400;
       var tick = function (ts) {
         if (!t0) t0 = ts;
         var p = Math.min((ts - t0) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
-        el.innerHTML = "+" + Math.round(target * eased) + small;
+        el.innerHTML = before + Math.round(target * eased) + small;
         if (p < 1) requestAnimationFrame(tick);
       };
       requestAnimationFrame(tick);
