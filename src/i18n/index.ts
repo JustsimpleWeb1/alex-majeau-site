@@ -17,8 +17,9 @@ type Pick<T> = T extends { fr: infer F; en: unknown }
       ? { [K in keyof T as K extends `${infer B}_fr` ? B : K extends `${string}_en` ? never : K]: Pick<T[K]> }
       : T;
 export type Content = Pick<typeof siteContent>;
+export type OneLang<T> = Pick<T>;
 
-const pick = (value: unknown, lang: Lang): unknown => {
+export const pick = (value: unknown, lang: Lang): unknown => {
   if (Array.isArray(value)) return value.map((v) => pick(v, lang));
   if (value === null || typeof value !== 'object') return value;
   const obj = value as Record<string, unknown>;

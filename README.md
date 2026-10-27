@@ -16,6 +16,7 @@ npm run preview    # sert dist/ en local
 
 - **Textes modifiables et référencement** : `src/content/site.json` (bilingue, clés `_fr` et `_en`). Image de partage : `public/images/og-image.jpg`.
 - **Design system** : `docs/design-system.md`, avec les trois niveaux de liberté des essais visuels. **Labo local des essais** : `docs/essais/` (le labo lui-même est ignoré par git). **Règles pour Claude et Codex** : `AGENTS.md`. **Guide d'Alex** : `GUIDE-ALEX.md`.
+- **Pages ajoutées** : un fichier bilingue par page dans `src/content/pages/` (mode d'emploi `docs/pages/LISEZ-MOI.md`); route `src/pages/[...slug].astro`, gabarit `src/components/Page.astro`.
 - **Textes d'interface** : `src/i18n/fr.ts` et `src/i18n/en.ts` (mêmes clés dans les deux fichiers).
 - **Sections** : `src/components/` (une par section, le texte vient des dictionnaires).
 - **Styles** : `src/styles/site.css` (repris tel quel du prototype).

@@ -83,6 +83,8 @@ Inventorier ici avant de créer. Réutiliser par défaut. Un nouveau composant s
 | Faits | `.facts` | À propos | `fact1`, `fact2` |
 | Question fréquente | `details` dans `.faq` | FAQ | `faq.items` (liste) |
 | Emplacement photo | `.shot` | Haut de page, À propos | Description dans `seo` |
+| Introduction de page | `.page-intro` | Pages ajoutées | `label`, `h1`, `lede` du fichier de la page |
+| Bloc de texte | `.page-block` + `.page-prose` | Pages ajoutées | `blocks` (titre, paragraphes, points en `.reasons`) |
 
 ### Ce qui se construit tout seul
 
@@ -108,6 +110,11 @@ Alex peut essayer des changements visuels. Il compare ses versions dans le labo 
 - une nouvelle variante d'un composant, un nouveau jeton (couleur, taille, rayon), une nouvelle section, une nouvelle animation;
 - la même demande met `docs/design-system.md` à jour (jeton avec son contraste calculé, ou entrée au registre de composants);
 - la description de la demande le dit clairement, pour que Simon décide en connaissance de cause.
+
+Au même niveau, **les nouvelles pages et le SEO technique** :
+
+- une nouvelle page se crée par un fichier dans `src/content/pages/` (`docs/pages/LISEZ-MOI.md`) : une intention de recherche par page, français et anglais, liens entre les langues et données Google automatiques, une demande par page;
+- le SEO technique (données Google de `src/layouts/Base.astro`, `astro.config.mjs`, redirections dans `netlify.toml`) suit les règles de `AGENTS.md`, section « Nouvelles pages et SEO technique ».
 
 **Interdit** : tout ce qui est dans « Interdits » plus bas.
 

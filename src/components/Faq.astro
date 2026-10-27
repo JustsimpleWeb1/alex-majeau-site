@@ -1,8 +1,9 @@
 ---
 import type { Dict } from '../i18n';
 import { site } from '../site.config';
-interface Props { t: Dict; }
-const { t } = Astro.props;
+// items : questions propres à une page ajoutée (par défaut, celles de l'accueil).
+interface Props { t: Dict; items?: { q: string; a: string }[] }
+const { t, items = t.faq.items } = Astro.props;
 ---
 <section class="faq" id="faq" aria-labelledby="faq-titre">
   <div class="wrap faq-grid">
@@ -11,7 +12,7 @@ const { t } = Astro.props;
       <p>{t.faq.intro} <a href={`mailto:${site.email}`}>{site.email}</a></p>
     </div>
     <div data-reveal>
-      {t.faq.items.map((item, i) => (
+      {items.map((item, i) => (
         <details open={i === 0}><summary>{item.q}<span class="pm" aria-hidden="true"></span></summary><p>{item.a}</p></details>
       ))}
     </div>

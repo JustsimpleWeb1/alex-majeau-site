@@ -285,6 +285,21 @@
   .facts li + li { border-top: 1px dashed var(--line); }
   .facts span { font-family: var(--f-mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
 
+  /* Pages ajoutées (src/content/pages/) : introduction et blocs de texte */
+  .page-intro { padding: var(--s7) 0 var(--s6); }
+  .page-intro h1 { font-size: clamp(40px, 4.6vw, 64px); margin: var(--s2) 0 var(--s3); max-width: 18ch; }
+  .page-block { padding: var(--s6) 0; border-top: 1px solid var(--line); }
+  .page-prose { max-width: 760px; }
+  .page-prose h2 { margin-bottom: var(--s3); }
+  .page-prose > p { font-size: 17px; line-height: 1.6; color: var(--ink-2); margin-bottom: var(--s2); }
+  .page-prose .reasons p { padding-top: 4px; }
+  @media (max-width: 960px) {
+    .page-intro { padding: var(--s5) 0; }
+    .page-intro h1 { font-size: clamp(34px, 9vw, 48px); }
+    .page-intro .btn { width: 100%; justify-content: center; }
+    .page-block { padding: var(--s5) 0; }
+  }
+
   /* 6. FAQ */
   .faq { padding: var(--s7) 0; background: var(--paper-2); border-top: 1px solid var(--line); }
   .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: var(--s7); align-items: start; }

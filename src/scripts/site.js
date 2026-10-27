@@ -4,6 +4,7 @@
 
   // Calendrier d'octobre 2026 (le 1er tombe un jeudi; l'Action de grâce est le lundi 12)
   var cal = document.getElementById("cal");
+  if (cal) {
   for (var b = 0; b < 3; b++) cal.insertAdjacentHTML("beforeend", "<span></span>");
   for (var d = 1; d <= 31; d++) {
     var dow = (d + 2) % 7; // 0 = lundi
@@ -22,6 +23,7 @@
     this.querySelectorAll(".slot").forEach(function (x) { x.classList.remove("sel"); });
     e.target.classList.add("sel");
   });
+  }
 
   // En-tête : bordure au défilement
   var header = document.getElementById("header");
@@ -255,7 +257,7 @@
   };
   btn.addEventListener("click", open);
   closeBtn.addEventListener("click", function () { close(true); });
-  menu.querySelectorAll("a[href^='#']").forEach(function (a) { a.addEventListener("click", function () { close(false); }); });
+  menu.querySelectorAll("a[href*='#']").forEach(function (a) { a.addEventListener("click", function () { close(false); }); });
   document.addEventListener("keydown", function (e) {
     if (!menu.classList.contains("open")) return;
     if (e.key === "Escape") { close(true); return; }
