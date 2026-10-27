@@ -57,7 +57,24 @@ Envoie autant de demandes que tu veux : une par idée, c'est parfait. Les demand
 
 Le design suit tout seul : l'outil utilise les couleurs, la police et les blocs du site.
 
-**Ce qui passe par Simon** : un nouveau service (chaque service a un petit visuel dessiné sur mesure), une nouvelle section, tes photos. Tu peux quand même le demander à l'outil : il préparera le travail, et Simon ajustera avant la mise en ligne.
+Tu peux aussi essayer des changements visuels (voir la section suivante).
+
+**Ce qui passe par Simon** : un nouveau service (chaque service a un petit visuel dessiné sur mesure), tes photos, la police. Tu peux quand même le demander à l'outil : il préparera le travail, et Simon ajustera avant la mise en ligne.
+
+## Essayer un changement visuel
+
+Tu veux voir ta section Résultats autrement, mettre un bloc plus en avant ou changer l'ordre des sections? Essaie.
+
+1. **Demande deux ou trois versions.** Ton outil les monte dans un labo sur ton ordi, chacune à sa propre adresse. Le labo ne part jamais sur Internet.
+2. **Compare** sur ordinateur et sur ton téléphone. Demande des ajustements, ou une autre version.
+3. **Garde celle que tu préfères.** L'outil l'applique au site et vide le labo.
+4. **Envoie-la à Simon**, seule dans sa demande. Garde tes changements de texte pour une autre demande, pour que Simon puisse accepter l'un sans l'autre.
+
+Ce que tu peux faire :
+
+- **Librement** : changer l'ordre des sections, présenter un bloc autrement (en cartes, en liste), mettre autre chose en avant, jouer avec les espacements et les fonds déjà prévus.
+- **En le signalant** : une nouvelle couleur, une nouvelle variante d'un bloc, une nouvelle section ou une animation. C'est permis : ton outil l'ajoute au design system et le dit à Simon dans ta demande.
+- **Jamais** : ce que le design system interdit, comme une barre de couleur à gauche des citations, une barre de progression ou des numéros décoratifs (01, 02…). Ton outil le sait.
 
 ## Ton référencement
 
@@ -101,6 +118,14 @@ Remplace ce qui est entre crochets.
 
 > Voici ma nouvelle image de partage [joins le fichier]. Mets-la au bon format et remplace l'ancienne.
 
+**Visuel**
+
+> Montre-moi trois versions de ma section [Résultats] dans le labo : une plus sobre, une qui met les chiffres encore plus en avant, et une en liste. Donne-moi les adresses pour les comparer.
+
+> Essaie la section [FAQ] avant la section [Méthode] dans le labo, et montre-moi le rendu sur téléphone.
+
+> Je garde la version [B]. Applique-la au site, vide le labo, puis ouvre une pull request pour Simon avec seulement ce changement visuel.
+
 **Voir et envoyer**
 
 > Lance le site et montre-moi la page sur ordinateur et sur téléphone.
@@ -117,6 +142,8 @@ Les deux outils ont aussi une version qui travaille directement sur GitHub, sans
 - **ChatGPT** : Codex, dans ChatGPT.
 
 Choisis le dépôt `alex-majeau-site`, écris ta demande en terminant par « puis ouvre une pull request pour Simon ». Tu vois le résultat dans l'aperçu Netlify de la pull request.
+
+Les essais visuels se font sur ton ordi : en ligne, l'outil ne peut pas te montrer le labo. Demande une seule version à la fois et regarde-la dans l'aperçu.
 
 ## Si quelque chose ne va pas
 

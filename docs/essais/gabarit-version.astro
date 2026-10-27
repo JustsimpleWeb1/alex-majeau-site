@@ -1,0 +1,41 @@
+---
+// Gabarit d'une version d'essai : la page complète, avec UNE section remplacée par sa variante.
+// À copier dans src/pages/essais/<nom>.astro (ex. resultats-a.astro). Ce dossier est ignoré par git.
+// La variante se met dans src/essais/ (ex. ResultsA.astro), copiée du composant d'origine puis modifiée.
+import Base from '../../layouts/Base.astro';
+import Sprite from '../../components/Sprite.astro';
+import Header from '../../components/Header.astro';
+import MobileMenu from '../../components/MobileMenu.astro';
+import Hero from '../../components/Hero.astro';
+import Services from '../../components/Services.astro';
+import Results from '../../essais/ResultsA.astro'; // ← la section essayée
+import Jargon from '../../components/Jargon.astro';
+import Method from '../../components/Method.astro';
+import About from '../../components/About.astro';
+import Faq from '../../components/Faq.astro';
+import Booking from '../../components/Booking.astro';
+import Footer from '../../components/Footer.astro';
+import { type Lang, dictionaries, paths, otherLang } from '../../i18n';
+
+const lang: Lang = 'fr';
+const version = 'Résultats · version A';
+const t = dictionaries[lang];
+const alt = paths[otherLang(lang)];
+---
+<Base lang={lang}>
+  <Sprite />
+  <Header t={t} alt={alt} />
+  <MobileMenu t={t} alt={alt} />
+  <main id="main">
+    <Hero t={t} />
+    <Services t={t} />
+    <Results t={t} />
+    <Jargon t={t} />
+    <Method t={t} />
+    <About t={t} />
+    <Faq t={t} />
+    <Booking t={t} />
+  </main>
+  <Footer t={t} alt={alt} />
+  <p style="position:fixed;left:12px;bottom:12px;z-index:200;margin:0;padding:8px 12px;border-radius:var(--r-btn);background:var(--carbon);color:var(--on-dark);font:600 13px var(--f-mono)">Essai · {version}</p>
+</Base>
